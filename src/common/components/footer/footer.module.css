@@ -1,0 +1,47 @@
+.container {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  box-shadow: 2px 2px 2px 2px silver;
+}
+
+.aboutContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  padding: 10%;
+}
+
+.logo {
+  font-size: 3rem;
+}
+
+.anchorsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.about {
+  display: grid;
+  gap: 20px;
+}
+
+.contactsContainer {
+  display: grid;
+  gap: 20px;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+}
+
+.authorContainer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  color: white;
+  background-color: var(--backgroundThird);
+}

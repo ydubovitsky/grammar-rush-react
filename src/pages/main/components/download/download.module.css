@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  gap: 20px;
+  padding: 5%;
+}
+
+.columnContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.firstColumn,
+.thirdColumn {
+  display: grid;
+  gap: 20px;
+  align-content: space-evenly;
+  padding: 20% 10%;
+}
+
+.block {
+  padding: 5%;
+  color: white;
+  background-color: #333456;
+  border-radius: 10px;
+  box-shadow: 5px 3px 10px rgb(184, 184, 184);
+}
