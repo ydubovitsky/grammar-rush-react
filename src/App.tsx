@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import MainLayout from "./layouts/main.layout";
 import MainPage from "./pages/main/main.page";
+import './App.css';
 
 const App = (): JSX.Element => {
   return (
