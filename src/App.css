@@ -33,3 +33,10 @@
   --textPrimary: black;
   --textSecondary: #8547CA;
 }
+
+
+
+@font-face {
+  font-family: 'Spice Rice';
+  src: local('Spice Rice'), url(./fonts/SpicyRice-Regular.ttf) format('truetype');
+}

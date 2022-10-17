@@ -8,6 +8,8 @@
 .container p {
   font-size: 2rem;
   text-transform: uppercase;
+  font-family: 'Spice Rice';
+  font-weight: 900;
 }
 
 .line {

@@ -18,3 +18,6 @@ https://github.com/stormwarning/stylelint-config-recess-order
 
 ### GIF
 https://gifer.com/ru/XVo7
+
+### Add fonts like a static
+https://stackoverflow.com/questions/41676054/how-to-add-fonts-to-create-react-app-based-projects
