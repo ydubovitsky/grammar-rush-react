@@ -6,6 +6,7 @@ import TaskItemComponent from './task-item/task-item.component';
 import { FETCH_STATUS } from '../../../../redux/types';
 import SpinnerLoaderComponent from '../../../../common/components/spinner-loader/spinner-loader.component';
 import styles from './task-list.module.css';
+import SectionTitleComponent from '../../../../common/atomic-components/section-title/section-title.component';
 
 const TaskListComponent: React.FC = () => {
 
@@ -23,7 +24,7 @@ const TaskListComponent: React.FC = () => {
         return <SpinnerLoaderComponent />
       }
       case FETCH_STATUS.LOADED: {
-        return tasks.map(task => <TaskItemComponent key={task.id} {...task} />);
+        return tasks.slice(0, 5).map(task => <TaskItemComponent key={task.id} {...task} />);
       }
       case FETCH_STATUS.ERROR: {
         return <h1>Error</h1>
@@ -34,12 +35,17 @@ const TaskListComponent: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Task List</h1>
-      <div className={styles.tasksContainer}>
-        {showTaskList(status)}
+      <SectionTitleComponent name="Exercise Examples" />
+      <div className={styles.columns}>
+        <div className={styles.column}>
+          <div className={styles.tasksContainer}>{showTaskList(status)}</div>
+        </div>
+        <div className={styles.column}>
+          <div className={styles.tasksContainer}>{showTaskList(status)}</div>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default TaskListComponent;

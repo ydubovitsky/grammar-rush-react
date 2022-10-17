@@ -1,5 +1,68 @@
 .container {
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
   font-size: 1rem;
-  padding: 5%;
-  box-shadow: 1px 1px 1px 1px silver;
+  text-align: center;
+  background-color: white;
+}
+
+.title {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.title i {
+  width: 50px;
+  transition: 0.3s ease;
+}
+
+.title .randomIcon {
+  font-size: 2rem;
+  color: var(--textSecondary);
+}
+
+.title:hover,
+.title:hover .randomIcon {
+  color: white;
+  background-color: var(--backgroundThird);
+}
+
+.title:active {
+  opacity: 0.9;
+  transform: scale(1.2);
+}
+
+.exercise {
+  max-height: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.answerForm {
+  padding: 1rem;
+  border: 1px solid silver;
+  border-radius: 1rem;
+}
+
+.active {
+  display: grid;
+  gap: 20px;  
+  max-height: 700px;
+  padding: 20px;
+}
+
+.buttonsContainer {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  justify-content: center;
+}
+
+.turnArrow {
+  transform: rotate(90deg);
 }
