@@ -13,6 +13,11 @@
   padding: 10%;
 }
 
+.logoContainer {
+  display: grid;
+  gap: 50px;
+}
+
 .logo {
   font-size: 3rem;
 }

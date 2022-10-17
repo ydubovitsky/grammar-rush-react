@@ -1,3 +1,4 @@
+import AnimatedLogoAtomicComponent from '../../atomic-components/animated-logo/animated-logo.component';
 import SocialIconsListComponent from '../social-icons-list/social-icons-list.component';
 import styles from './footer.module.css';
 
@@ -6,7 +7,9 @@ const FooterComponent = () => {
     <div className={styles.container}>
       <div className={styles.aboutContainer}>
         <div className={styles.logoContainer}>
-          <div className={styles.logo}>Grammar Rush</div>
+          <div className={styles.logo}>
+            <AnimatedLogoAtomicComponent />
+          </div>
           <div className={styles.anchorsContainer}>
             <p>Home |</p>
             <p>Features |</p>

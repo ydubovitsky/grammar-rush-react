@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import AnimatedLogoAtomicComponent from '../../../../common/atomic-components/animated-logo/animated-logo.component';
 import ButtonComponent from '../../../../common/components/button/button.component';
 import styles from './hero.module.css';
 import image from './images/ipad-hand.png';
@@ -18,10 +19,10 @@ const HeroComponent: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.leftColumn}>
         <div className={styles.content}>
-          <h3>Grammar Rush</h3>
+          <AnimatedLogoAtomicComponent />
           <h2>The best application for learning grammar</h2>
           <h1>Mobile and Web Application</h1>
-          <ButtonComponent name='Download' />
+          <ButtonComponent name="Download" />
         </div>
         <div className={styles.circleButton}>
           <i className="fas fa-chevron-right"></i>
@@ -32,14 +33,17 @@ const HeroComponent: React.FC = () => {
         <div className={styles.circleButton}>
           <i className="fas fa-chevron-left"></i>
         </div>
-        <i onClick={menuToggleHandler} className={`fas fa-bars ${styles.menuBtn}`}></i>
+        <i
+          onClick={menuToggleHandler}
+          className={`fas fa-bars ${styles.menuBtn}`}
+        ></i>
       </div>
       <div ref={menuElementRef} className={styles.menu}>
         <h1>Sign In</h1>
         <h1 onClick={menuToggleHandler}>Exit</h1>
       </div>
     </div>
-  )
+  );
 }
 
 export default HeroComponent;
