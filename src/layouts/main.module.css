@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  padding: 0 5%;
-  background-size: contain;
   background-attachment: fixed;
+  /* padding: 0 5%; */
+  background-size: contain;
 }
