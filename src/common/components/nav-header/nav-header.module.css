@@ -1,0 +1,16 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  padding: 50px 0;
+}
+
+.navList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(33%, 250px));
+}
+
+.navList a {
+  display: grid;
+  justify-items: end;
+  width: 100%;
+}
