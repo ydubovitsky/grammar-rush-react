@@ -1,0 +1,24 @@
+.container {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 1.5rem 2.375rem 1.5rem 2.375rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0;
+  margin-left: 0;
+  font: 700 0.875rem/0 "Open Sans",sans-serif;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--backgroundSecondary);
+  border-radius: 10px;
+  transition: all 0.2s;
+  transition: 0.3s;
+}
+
+.container:active {
+  transform: scale(0.95);
+}
+
+.container:hover {
+  background-color: var(--backgroundThird);
+}
