@@ -111,6 +111,15 @@
   transition: 0.5s;
 }
 
+.menuBtn {
+  transition: 0.3s ease-in;
+}
+
+.menuBtn:hover {
+  transform: rotate(180deg);
+  color: var(--textSecondary);
+}
+
 .active {
   left: 0;
 }
