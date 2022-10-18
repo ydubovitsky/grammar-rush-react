@@ -1,6 +1,21 @@
-* {
-  padding: 0;
-  margin: 0;
+@font-face {
+  font-family: 'Spice Rice';
+  src: local('Spice Rice'), url(./fonts/SpicyRice-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato'), url(./fonts/Lato-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'AbhayaLibre';
+  src: local('AbhayaLibre'), url(./fonts/AbhayaLibre-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(./fonts/Montserrat-Regular.ttf) format('truetype');
 }
 
 /* width */
@@ -34,9 +49,13 @@
   --textSecondary: #8547CA;
 }
 
-
-
-@font-face {
-  font-family: 'Spice Rice';
-  src: local('Spice Rice'), url(./fonts/SpicyRice-Regular.ttf) format('truetype');
+* {
+  padding: 0;
+  margin: 0;
 }
+
+body {
+  font-family: 'AbhayaLibre', sans-serif;
+  font-size: 1.1rem;
+}
+
