@@ -24,3 +24,6 @@ https://stackoverflow.com/questions/41676054/how-to-add-fonts-to-create-react-ap
 
 ### Default props into components
 https://stackoverflow.com/questions/37282159/default-property-value-in-react-component-using-typescript
+
+### Free Icons
+https://icons8.com/
