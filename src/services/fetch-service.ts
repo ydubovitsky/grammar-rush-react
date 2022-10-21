@@ -3,7 +3,8 @@ import axios, { AxiosRequestConfig, ResponseType } from 'axios';
 interface FetchOptions extends AxiosRequestConfig {
   method: string,
   url: string,
-  responseType: ResponseType | undefined
+  body?: any,
+  responseType?: ResponseType | undefined
 }
 
 export const fetchData = async (options: FetchOptions): Promise<any> => {

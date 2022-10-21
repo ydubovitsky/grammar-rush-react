@@ -1,10 +1,10 @@
 .container span {
+  display: inline-block;
+  font-family: 'Spice Rice';
   text-shadow: 0 0px #f3c623, 0 0px #f2aaaa;
   transition: 0.3s ease-in;
   transform: translate(0, 30%) rotate(4deg);
   animation: jump 2s ease-in-out infinite;
-  font-family: 'Spice Rice';
-  display: inline-block;
 }
 
 .logo {
@@ -64,8 +64,8 @@
   }
 
   50% {
-    transform: translate(0, 0) rotate(-4deg);
     text-shadow: 0 0px #8fc0a9, 0 0px #8547CA;
+    transform: translate(0, 0) rotate(-4deg);
   }
 
   66.67% {

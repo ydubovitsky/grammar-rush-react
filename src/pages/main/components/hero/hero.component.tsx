@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import AnimatedLogoAtomicComponent from '../../../../common/atomic-components/animated-logo/animated-logo.component';
 import ButtonComponent from '../../../../common/components/button/button.component';
 import styles from './hero.module.css';
@@ -35,12 +36,12 @@ const HeroComponent: React.FC = () => {
         </div>
         <i
           onClick={menuToggleHandler}
-          className={`fas fa-bars ${styles.menuBtn}`}
+          className={`fas fa-bars ${styles.barsBtn}`}
         ></i>
       </div>
       <div ref={menuElementRef} className={styles.menu}>
-        <h1>Sign In</h1>
-        <h1 onClick={menuToggleHandler}>Exit</h1>
+        <Link to={"/main/auth"} className={styles.menuBtn}>Sign In</Link>
+        <h1 onClick={menuToggleHandler} className={styles.menuBtn}>Exit</h1>
       </div>
     </div>
   );

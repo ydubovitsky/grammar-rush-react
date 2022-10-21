@@ -6,10 +6,10 @@
 }
 
 .container p {
-  font-size: 2rem;
-  text-transform: uppercase;
   font-family: 'Spice Rice';
+  font-size: 2rem;
   font-weight: 900;
+  text-transform: uppercase;
 }
 
 .line {

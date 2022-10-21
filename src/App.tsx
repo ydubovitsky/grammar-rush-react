@@ -1,22 +1,44 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import MainLayout from "./layouts/main.layout";
 import MainPage from "./pages/main/main.page";
-import './App.css';
+import SignInComponent from "./pages/main/components/login/sign-in/sign-in.component";
+import RequireAuthRoute from "./hoc/RequireAuthRoute";
+import DashboardPage from "./pages/dashboard/dashboard.page";
+import "./App.css";
 
 const App = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainLayout />} >
+        <Route path="/" element={<MainLayout />}>
           <Route index element={<MainPage />} />
+          <Route path="main" element={<MainPage />}>
+            <Route path="auth" element={<SignInComponent />} />
+          </Route>
+          <Route element={<RequireAuthRoute />}>
+            <Route path="dashboard" element={<DashboardPage />}>
+              {/* <Route path="card-set-list" element={<CardSetList />} />
+              <Route path="card-set-list/:cardSetId" element={<CardSet />}>
+                <Route path="list" element={<FlashCardList />} />
+                <Route path="memorize" element={<CardMemorize />} />
+              </Route>
+              <Route path="card-set-create" element={<CardSetForm />} />
+              <Route path="card-set-edit" element={<CardSetForm />} />
+              <Route path="card-set-folders" element={<CardSetForm />} />
+              <Route path="card-set-favorites" element={<CardSetForm />} />
+              <Route path="card-set-recently" element={<CardSetForm />} />
+              <Route path="settings" element={<Settings />} />
+              <Route path="page-not-found" element={<NotFound />} />
+              <Route
+                path="*"
+                element={<Navigate to="page-not-found" replace />}
+              /> */}
+            </Route>
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

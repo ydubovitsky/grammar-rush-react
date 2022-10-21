@@ -11,9 +11,9 @@
   text-decoration: none;
   background-color: var(--backgroundSecondary);
   border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px white;
   transition: all 0.2s;
   transition: 0.3s;
-  box-shadow: 1px 1px 1px 1px white;
 }
 
 .container:active {

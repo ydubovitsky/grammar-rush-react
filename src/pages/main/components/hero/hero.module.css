@@ -4,8 +4,8 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   align-items: center;
   justify-items: center;
-  font-family: 'Spice Rice';
   min-height: 100vh;
+  font-family: 'Spice Rice';
 }
 
 .content {
@@ -87,7 +87,7 @@
   color: var(--backgroundSecondary);;
 }
 
-.rightColumn .menuBtn {
+.rightColumn .barsBtn {
   position: absolute;
   top: 50px;
   right: 50px;
@@ -112,12 +112,23 @@
 }
 
 .menuBtn {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
   transition: 0.3s ease-in;
 }
 
 .menuBtn:hover {
-  transform: rotate(180deg);
+  color: red;
+}
+
+.barsBtn {
+  transition: 0.3s ease-in;
+}
+
+.barsBtn:hover {
   color: var(--textSecondary);
+  transform: rotate(180deg);
 }
 
 .active {

@@ -1,0 +1,60 @@
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10000;
+  display: grid;
+  grid-template-areas: "left right";
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+  width: 50%;
+  height: max-content;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 20px;
+  transition: 0.3s ease;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.left {
+  display: grid;
+  grid-area: left;
+  align-items: center;
+  justify-items: center;
+  padding: 5%;
+  text-align: center;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  background-color: #eee;
+  border: none;
+}
+
+.right {
+  display: grid;
+  grid-area: right;
+  align-items: center;
+  justify-items: center;
+  color: white;
+  text-align: center;
+  background-color: var(--backgroundThird);
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 80%;
+  }
+  .buttons {
+    gap: 5px;
+  }
+}
