@@ -1,16 +1,29 @@
-import { configureStore } from '@reduxjs/toolkit';
-import taskReducers from './features/task/task.slice';
-import authReducer from './features/auth/auth.slice';
+import { configureStore } from "@reduxjs/toolkit";
+import taskReducers from "./features/task/task.slice";
+import authReducer from "./features/auth/auth.slice";
+import { loadState, saveState } from "../services/localStorageService";
+
+const persistedState = loadState("auth");
 
 const store = configureStore({
   reducer: {
     task: taskReducers,
-    auth: authReducer
+    auth: authReducer,
   },
-})
+  preloadedState: {
+    auth: persistedState,
+  },
+});
+
+//TODO Доработать, чтобы можно было передавать объект с множеством полей!
+//! Save auth state
+store.subscribe(() => {
+  saveState("auth", store.getState().auth);
+});
+
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch;
 
 export default store;
