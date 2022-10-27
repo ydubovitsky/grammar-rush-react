@@ -1,8 +1,8 @@
 import styles from './unit-title.module.css';
 
-const UnitTitleComponent = ({ text }) => {
+const UnitTitleComponent = ({ text, fontSize = '' }) => {
   return (
-    <div className={styles.container}>{text}</div>
+    <div className={styles.container} style={{fontSize: fontSize}}>{text}</div>
   )
 }
 
