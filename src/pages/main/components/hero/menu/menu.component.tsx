@@ -10,7 +10,7 @@ const MenuComponent: React.FC = () => {
   const status = useSelector(authStatusSelector);
 
   //TODO Упростить
-  const menuToggleHandler = (e: React.MouseEvent<HTMLInputElement>): void => {
+  const menuToggleHandler = (): void => {
     const bodyEl = document.querySelector("body");
     bodyEl!.style.overflow =
       bodyEl!.style.overflow === "hidden" ? "visible" : "hidden";

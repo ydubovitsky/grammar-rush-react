@@ -1,0 +1,24 @@
+.container {
+  margin-top: 50px;
+  padding: 5%;
+  display: grid;
+  gap: 20px;
+  background-color: var(--backgroundPrimary);
+}
+
+.description {
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.description img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.description p {
+  font-size: 1.5rem;
+}

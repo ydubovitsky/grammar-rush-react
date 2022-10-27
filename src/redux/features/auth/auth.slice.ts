@@ -75,7 +75,9 @@ const authSlice = createSlice({
 
 export const authSelector = (state: RootState) => state.auth;
 export const userEntitySelector = (state: RootState) => state.auth.userEntity;
-export const authStatusSelector = (state: RootState) : FETCH_STATUS =>
+export const authStatusSelector = (state: RootState): FETCH_STATUS =>
   state.auth.status;
+export const userRolesSelector = (state: RootState) =>
+  state.auth.userEntity.roles;
 
 export default authSlice.reducer;
