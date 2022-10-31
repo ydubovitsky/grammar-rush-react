@@ -1,11 +1,11 @@
-import SectionTitleComponent from '../../../../common/atomic-components/section-title/section-title.component';
-import ButtonComponent from '../../../../common/components/button/button.component';
-import styles from './features.module.css';
+import SectionTitleComponent from "../../../../common/atomic-components/section-title/section-title.component";
+import ButtonComponent from "../../../../common/components/button/button.component";
+import styles from "./features.module.css";
 
 interface FeaturePropsInterface {
-  icon: string,
-  title: string,
-  text: string
+  icon: string;
+  title: string;
+  text: string;
 }
 
 const featuresData: FeaturePropsInterface[] = [
@@ -23,15 +23,14 @@ const featuresData: FeaturePropsInterface[] = [
     icon: "far fa-lightbulb",
     title: "High Resolution",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi consequatur eligendi quaerat maxime quasi similique beatae accusamus ad? Facilis asperiores nisi, ullam iure laudantium eos dignissimos necessitatibus architecto natus!",
-  }
+  },
 ];
 
 const FeaturesComponent: React.FC = () => {
-
   const showFeatureEl = (array: FeaturePropsInterface[]): JSX.Element[] => {
-    return array.map((data) => {
+    return array.map((data, idx) => {
       return (
-        <div className={styles.feature}>
+        <div key={idx} className={styles.feature}>
           <div className={styles.featureHeader}>
             <i className={data.icon}></i>
             <h3>{data.title}</h3>
@@ -54,6 +53,6 @@ const FeaturesComponent: React.FC = () => {
       <ButtonComponent name="Start now" />
     </div>
   );
-}
+};
 
 export default FeaturesComponent;
