@@ -7,13 +7,18 @@ import styles from "./menu.module.css";
 
 const MenuComponent: React.FC = () => {
   const menuElementRef = useRef<HTMLDivElement>(null);
-  const status = useSelector(authStatusSelector);
+  const status: FETCH_STATUS = useSelector(authStatusSelector);
 
-  //TODO Упростить
-  const menuToggleHandler = (): void => {
+  // Прячем/Показываем полосу прокрутки
+  const toggleOverflowVisibleHandler = (): void => {
     const bodyEl = document.querySelector("body");
     bodyEl!.style.overflow =
       bodyEl!.style.overflow === "hidden" ? "visible" : "hidden";
+  };
+
+  // Открываем/закрываем меню
+  const menuToggleHandler = (): void => {
+    toggleOverflowVisibleHandler();
     const menuEl = menuElementRef.current;
     menuEl!.classList.toggle(styles.active);
   };
@@ -21,7 +26,11 @@ const MenuComponent: React.FC = () => {
   const showMenuElements = (status: string) => {
     if (status === FETCH_STATUS.AUTHENTICATED) {
       return (
-        <Link to={"dashboard"} className={styles.menuBtn}>
+        <Link
+          to={"dashboard"}
+          className={styles.menuBtn}
+          onClick={toggleOverflowVisibleHandler}
+        >
           Dashboard
         </Link>
       );
