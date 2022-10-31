@@ -1,21 +1,21 @@
 .container {
   display: grid;
+  gap: 20px;
+  padding: 5%;
   margin-top: 50px;
   background-color: var(--backgroundPrimary);
-  padding: 5%;
-  gap: 20px;
 }
 
 .formsContainer {
   display: grid;
-  gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .taskContainer {
   display: grid;
-  background-color: white;
   padding: 5%;
+  background-color: white;
   border-radius: 20px;
   box-shadow: 1px 1px 1px rgb(236 236 236);
 }
@@ -30,10 +30,10 @@
 }
 
 .themeContainer {
-  background-color: white;
-  border-radius: 20px;
-  padding: 5%;
   display: grid;
   grid-template-rows: min-content max-content min-content;
+  padding: 5%;
+  background-color: white;
+  border-radius: 20px;
   box-shadow: 1px 1px 1px rgb(236 236 236);
 }

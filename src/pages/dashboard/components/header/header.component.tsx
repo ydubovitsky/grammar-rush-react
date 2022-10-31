@@ -24,7 +24,7 @@ const HeaderComponent = () => {
         <Link to={"info"} className={styles.navEl}>
           Info
         </Link>
-        <Link to={"trainer"} className={styles.navEl}>
+        <Link to={"trainer?themeId=1"} className={styles.navEl}>
           Trainer
         </Link>
         {showAdminLinkEl()}

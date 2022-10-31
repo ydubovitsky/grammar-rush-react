@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { fetchData } from "../../../services/fetch-service";
-import { UserInterface } from "../../../types/TaskInterface";
+import { UserInterface } from "../../../types";
 import { FETCH_STATUS } from "../../types";
 import { BASE_URL } from "../../const/url-endpoints";
 import { RootState } from "../../store";

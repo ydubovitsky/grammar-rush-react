@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchData } from '../../../services/fetch-service';
-import { TaskInterface } from '../../../types/TaskInterface';
+import { BASE_URL } from '../../const/url-endpoints';
+import { TaskInterface } from '../../../types';
 import { FETCH_STATUS } from '../../types';
 
 interface TaskStateInterface {
@@ -14,7 +15,7 @@ export const fetchAllTasks: any = createAsyncThunk(
   async () => {
     const response = await fetchData({
       method: 'GET',
-      url: `http://localhost:8085/api/v1/task/all`,
+      url: `${BASE_URL}/api/v1/task/all`,
       responseType: 'json'
     })
     const result = await response as TaskInterface[];
@@ -25,8 +26,22 @@ export const fetchAllTasks: any = createAsyncThunk(
 export const fetchTaskById = createAsyncThunk(
   'task/fetchById',
   async (userId: number) => {
-    const response = await fetch(`http://localhost:8085/api/v1/task/${userId}`)
+    const response = await fetch(`${BASE_URL}/api/v1/task/${userId}`)
     const result = await response.json() as TaskInterface;
+    return result;
+  }
+)
+
+export const addNewTask: any = createAsyncThunk( //FIXME any
+  'task/add',
+  async (data) => {
+    const response = await fetchData({
+      method: 'POST',
+      data: data,
+      url: `${BASE_URL}/api/v1/task/add`,
+      responseType: 'json'
+    })
+    const result = await response as TaskInterface[];
     return result;
   }
 )
