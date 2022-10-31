@@ -19,9 +19,9 @@ const AnimatedLogoAtomicComponent: React.FC<PageProps> = ({name = "Grammar Rush"
   }
 
   const splitStringToCharArray = (str: string) => {
-    return str.split("").map((char) => {
-      if(char === "u") return <span className={styles.char}>{char}</span>
-      return <span>{char}</span>;
+    return str.split("").map((char, idx) => {
+      if(char === "u") return <span key={idx} className={styles.char}>{char}</span>
+      return <span key={idx}>{char}</span>;
     })}
 
   return (
