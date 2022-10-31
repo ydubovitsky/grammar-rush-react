@@ -1,10 +1,3 @@
-export interface TaskInterface {
-  id: number,
-  task: string,
-  answer: string,
-  themeName: string
-}
-
 export interface UserInterface {
   id?: number,
   username: string,
