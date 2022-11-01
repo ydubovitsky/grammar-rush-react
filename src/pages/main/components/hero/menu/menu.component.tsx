@@ -1,13 +1,17 @@
 import React, { useRef } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { authStatusSelector } from "../../../../../redux/features/auth/auth.slice";
+import {
+  authStatusSelector,
+  logout,
+} from "../../../../../redux/features/auth/auth.slice";
 import { FETCH_STATUS } from "../../../../../redux/types";
 import styles from "./menu.module.css";
 
 const MenuComponent: React.FC = () => {
   const menuElementRef = useRef<HTMLDivElement>(null);
   const status: FETCH_STATUS = useSelector(authStatusSelector);
+  const dispatch = useDispatch();
 
   // Прячем/Показываем полосу прокрутки
   const toggleOverflowVisibleHandler = (): void => {
@@ -26,13 +30,17 @@ const MenuComponent: React.FC = () => {
   const showMenuElements = (status: string) => {
     if (status === FETCH_STATUS.AUTHENTICATED) {
       return (
-        <Link
-          to={"dashboard"}
-          className={styles.menuBtn}
-          onClick={toggleOverflowVisibleHandler}
-        >
-          Dashboard
-        </Link>
+        <>
+          <Link
+            to={"dashboard"}
+            className={styles.menuBtn}
+          >
+            Dashboard
+          </Link>
+          <div className={styles.menuBtn} onClick={() => dispatch(logout())}>
+            Logout
+          </div>
+        </>
       );
     } else {
       return (

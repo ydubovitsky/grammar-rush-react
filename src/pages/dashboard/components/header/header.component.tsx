@@ -1,10 +1,14 @@
 import styles from "./header.module.css";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { userRolesSelector } from "../../../../redux/features/auth/auth.slice";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  userRolesSelector,
+  logout,
+} from "../../../../redux/features/auth/auth.slice";
 
 const HeaderComponent = () => {
   const userRoles = useSelector(userRolesSelector);
+  const dispatch = useDispatch();
 
   const showAdminLinkEl = (): any => {
     return userRoles.includes("ADMIN") ? (
@@ -28,9 +32,9 @@ const HeaderComponent = () => {
           Trainer
         </Link>
         {showAdminLinkEl()}
-        <Link to={"/"} className={styles.navEl}>
-          Exit
-        </Link>
+        <div onClick={() => dispatch(logout())} className={styles.navEl}>
+          <i className="fas fa-sign-out-alt"></i>
+        </div>
       </div>
     </div>
   );
