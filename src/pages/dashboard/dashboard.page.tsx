@@ -6,7 +6,9 @@ const DashboardPage = () => {
   return (
     <div className={styles.container}>
       <HeaderComponent />
-      <Outlet />
+      <div className={styles.content}>
+        <Outlet />
+      </div>
     </div>
   );
 };
