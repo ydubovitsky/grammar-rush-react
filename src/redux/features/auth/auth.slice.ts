@@ -42,7 +42,11 @@ const initialState = {
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    logout() {
+      return initialState;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(register.pending, (state, action) => {
@@ -70,6 +74,8 @@ const authSlice = createSlice({
       });
   },
 });
+
+export const { logout } = authSlice.actions;
 
 // ------------------------------------ Selectors ------------------------------------
 
