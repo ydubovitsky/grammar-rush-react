@@ -24,25 +24,15 @@ const App = (): JSX.Element => {
               <Route path="info" element={<InfoComponent />} />
               <Route path="trainer" element={<TrainerComponent />} />
               <Route path="admin" element={<AdminComponent />} />
-              {/* <Route path="card-set-list" element={<CardSetList />} />
-              <Route path="card-set-list/:cardSetId" element={<CardSet />}>
-                <Route path="list" element={<FlashCardList />} />
-                <Route path="memorize" element={<CardMemorize />} />
-              </Route>
-              <Route path="card-set-create" element={<CardSetForm />} />
-              <Route path="card-set-edit" element={<CardSetForm />} />
-              <Route path="card-set-folders" element={<CardSetForm />} />
-              <Route path="card-set-favorites" element={<CardSetForm />} />
-              <Route path="card-set-recently" element={<CardSetForm />} />
-              <Route path="settings" element={<Settings />} />
-              <Route path="page-not-found" element={<NotFound />} />
               <Route
                 path="*"
                 element={<Navigate to="page-not-found" replace />}
-              /> */}
+              />
             </Route>
           </Route>
         </Route>
+        {/* //! Default Redirect */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
