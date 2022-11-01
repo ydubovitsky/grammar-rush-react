@@ -1,5 +1,5 @@
 import styles from "./info.module.css";
-import imageSrc from "./images/ivan-shilov-ucUB9wxkPgY-unsplash.jpg";
+import imageSrc from "./images/alexander-grey-jU40gA2UDmA-unsplash.jpg";
 import UnitTitleComponent from "../../../../common/atomic-components/unit-title/unit-title.component";
 
 const InfoComponent: React.FC = () => {
