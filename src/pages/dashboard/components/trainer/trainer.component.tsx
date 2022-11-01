@@ -14,6 +14,7 @@ import { RootState } from "../../../../redux/store";
 import { FETCH_STATUS } from "../../../../redux/types";
 import { TaskInterface } from "../../../../types";
 import ThemesComponent from "./themes/themes.component";
+import ErrorPage from "../../../../common/components/error-page/error-page";
 import styles from "./trainer.module.css";
 
 const TrainerComponent: React.FC = () => {
@@ -62,7 +63,7 @@ const TrainerComponent: React.FC = () => {
   const checkAnswerHandler = () => {
     // TODO найти лучший способ проверки на undefined
     if (tasks !== undefined) {
-      if (answerText === tasks[index].answer) {
+      if (answerText == tasks[index].answer) {
         setCounter({ ...counter, correct: counter.correct + 1 });
         alert("CORRECT");
       } else {
@@ -81,8 +82,7 @@ const TrainerComponent: React.FC = () => {
   };
 
   if (tasks == undefined || tasks.length === 0) {
-    //TODO Page not found!
-    return <h1>Oooops</h1>;
+    return <ErrorPage/>
   }
 
   return (

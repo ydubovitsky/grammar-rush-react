@@ -73,7 +73,7 @@
 }
 
 .scaled {
-  position: absolute;
+  position: fixed;
   top: 100px;
   right: 20px;
   left: 20px;
