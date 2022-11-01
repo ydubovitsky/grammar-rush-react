@@ -1,7 +1,7 @@
 import SectionTitleComponent from "../../../../common/atomic-components/section-title/section-title.component";
 import ButtonComponent from "../../../../common/components/button/button.component";
 import styles from "./features.module.css";
-
+const Fade = require("react-reveal/Fade");
 interface FeaturePropsInterface {
   icon: string;
   title: string;
@@ -43,14 +43,16 @@ const FeaturesComponent: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <SectionTitleComponent
-        name="Amazing Features To Use
+      <Fade bottom cascade>
+        <SectionTitleComponent
+          name="Amazing Features To Use
         Our Application"
-      />
-      <div className={styles.featuresContainer}>
-        {showFeatureEl(featuresData)}
-      </div>
-      <ButtonComponent name="Start now" />
+        />
+        <div className={styles.featuresContainer}>
+          {showFeatureEl(featuresData)}
+        </div>
+        <ButtonComponent name="Start now" />
+      </Fade>
     </div>
   );
 };

@@ -27,3 +27,6 @@ https://stackoverflow.com/questions/37282159/default-property-value-in-react-com
 
 ### Free Icons
 https://icons8.com/
+
+### https://www.react-reveal.com/tutorials/
+https://stackoverflow.com/questions/68037185/could-not-find-a-declaration-file-for-module-react-reveal-fade
