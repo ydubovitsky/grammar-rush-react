@@ -5,10 +5,10 @@ import { FETCH_STATUS } from "../redux/types";
 
 const RequireAuthRoute = () => {
   const location = useLocation();
-  const { status } = useSelector(authStatusSelector);
+  const status = useSelector(authStatusSelector);
 
-  if (status === FETCH_STATUS.AUTHENTICATED) {
-    return <Navigate to="/main/auth" state={{ from: location }} />;
+  if (status !== FETCH_STATUS.AUTHENTICATED) {
+    return <Navigate to="/main" state={{ from: location }} />;
   }
 
   return <Outlet />;
