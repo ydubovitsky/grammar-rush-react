@@ -16,14 +16,23 @@ import { TaskInterface } from "../../../../types";
 import ThemesComponent from "./themes/themes.component";
 import ErrorPage from "../../../../common/components/error-page/error-page";
 import styles from "./trainer.module.css";
+import OverlayComponent from "./overlay/overlay.component";
+const Fade = require("react-reveal/Fade");
 
+const EXERCISES_CONTAINER_STYLES = {
+  WRONG: "WRONG",
+  CORRECT: "CORRECT",
+  INIT: "INIT",
+};
+
+//TODO Упростить этот компонент
 const TrainerComponent: React.FC = () => {
   const dispatch = useDispatch();
   const [index, setIndex] = useState<number>(0);
   const [answerText, setAnswerText] = useState<string>("");
   const [isScaled, setIsScaled] = useState<boolean>(false);
   const [counter, setCounter] = useState({ correct: 0, wrong: 0 });
-  const scaleBtn = useRef<HTMLDivElement>(null);
+  const exerciseContainerRef = useRef<HTMLDivElement>(null);
   const [searchParams] = useSearchParams();
   const themeId: string | null = searchParams.get("themeId");
   // Fetch status
@@ -54,48 +63,66 @@ const TrainerComponent: React.FC = () => {
   const getNextIndex = (min: number, max: number): number => {
     if (min === max) return min; // Если границы диапазона совпадают
     const result = Math.floor(Math.random() * (max - min + 1)) + min;
+    changeExerciseContainerBackgroundHandler(EXERCISES_CONTAINER_STYLES.INIT);
     if (result === index) {
       return getNextIndex(min, max);
     }
     return result;
   };
 
-  const checkAnswerHandler = () => {
-    // TODO найти лучший способ проверки на undefined
+  // Проверяем корректность ответа пользователя и меняем цвет окна
+  const checkAnswerHandler = (): void => {
     if (tasks !== undefined) {
       if (answerText == tasks[index].answer) {
         setCounter({ ...counter, correct: counter.correct + 1 });
-        alert("CORRECT");
+        changeExerciseContainerBackgroundHandler(
+          EXERCISES_CONTAINER_STYLES.CORRECT
+        );
       } else {
-        alert("WRONG");
+        changeExerciseContainerBackgroundHandler(
+          EXERCISES_CONTAINER_STYLES.WRONG
+        );
         setCounter({ ...counter, wrong: counter.wrong + 1 });
       }
     }
   };
 
-  const expandExerciseHandler = () => {
-    const bodyEl = document.querySelector("body");
-    bodyEl!.style.overflow =
-      bodyEl!.style.overflow === "hidden" ? "visible" : "hidden";
-    scaleBtn.current?.classList.toggle(styles.scaled);
+  // Меняем цвет окна задания
+  const changeExerciseContainerBackgroundHandler = (flag: string): void => {
+    switch (flag) {
+      case EXERCISES_CONTAINER_STYLES.CORRECT:
+        exerciseContainerRef.current?.classList.add(styles.correctAnswer);
+        break;
+      case EXERCISES_CONTAINER_STYLES.WRONG:
+        exerciseContainerRef.current?.classList.add(styles.wrongAnswer);
+        break;
+      case EXERCISES_CONTAINER_STYLES.INIT:
+        exerciseContainerRef.current?.classList.remove(
+          styles.correctAnswer,
+          styles.wrongAnswer
+        );
+        break;
+    }
+  };
+
+  const expandExerciseElHandler = (): void => {
+    exerciseContainerRef.current?.classList.toggle(styles.scaled);
     setIsScaled(!isScaled);
   };
 
+  // Если нет задач, то показываем страницу ошибок
   if (tasks == undefined || tasks.length === 0) {
-    return <ErrorPage/>
+    return <ErrorPage />;
   }
 
   return (
     <div className={styles.container}>
-      <div
-        className={styles.overlay}
-        style={{ display: isScaled ? "block" : "none" }}
-      ></div>
+      <OverlayComponent isScaled={isScaled} />
       <UnitTitleComponent text="Trainer" />
       <div className={styles.trainerContainer}>
-        <div className={styles.exerciseContainer} ref={scaleBtn}>
+        <div className={styles.exerciseContainer} ref={exerciseContainerRef}>
           <i
-            onClick={expandExerciseHandler}
+            onClick={expandExerciseElHandler}
             className={cn("fas fa-expand-alt", styles.scaleBtn)}
           ></i>
           <p className={styles.themeName}>
@@ -112,12 +139,14 @@ const TrainerComponent: React.FC = () => {
               name="Next"
               handler={() => setIndex(getNextIndex(0, tasks.length - 1))}
             />
-            <ButtonComponent name="Compare" handler={checkAnswerHandler} />
+            <ButtonComponent name="Check answer" handler={checkAnswerHandler} />
             <p>Wrong: {counter.wrong}</p>
             <p>Correct: {counter.correct}</p>
           </div>
         </div>
-        <ThemesComponent />
+        <Fade right>
+          <ThemesComponent />
+        </Fade>
       </div>
     </div>
   );
