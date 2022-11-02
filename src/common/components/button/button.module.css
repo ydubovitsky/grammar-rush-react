@@ -10,7 +10,7 @@
   text-decoration: none;
   background-color: var(--backgroundSecondary);
   border-radius: 10px;
-  box-shadow: 1px 1px 1px 1px white;
+  box-shadow: 1px 1px 1px 1px rgba(255, 255, 255, 0.288);
   transition: all 0.2s;
   transition: 0.3s;
 }
