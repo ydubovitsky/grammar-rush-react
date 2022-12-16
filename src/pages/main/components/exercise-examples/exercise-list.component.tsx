@@ -1,21 +1,25 @@
 import { useEffect } from "react";
-import { fetchAllTasks } from "../../../../redux/features/task/task.slice";
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks/hooks";
-import { TaskInterface } from "../../../../types/TaskInterface";
-import TaskItemComponent from "./task-item/task-item.component";
-import { FETCH_STATUS } from "../../../../redux/types";
-import SpinnerLoaderComponent from "../../../../common/components/spinner-loader/spinner-loader.component";
-import styles from "./task-list.module.css";
 import SectionTitleComponent from "../../../../common/atomic-components/section-title/section-title.component";
+import SpinnerLoaderComponent from "../../../../common/components/spinner-loader/spinner-loader.component";
+import {
+  fetchAllThemes,
+  themeEntitiesSelector,
+} from "../../../../redux/features/theme/theme.slice";
+import { FETCH_STATUS } from "../../../../redux/types";
+import { ThemeInterface } from "../../../../types";
+import getRandomNumberInRange from "../../../../utils/randomNumberInRange";
+import ExerciseItemComponent from "./exercise-item/exercise-item.component";
+import styles from "./exercise-list.module.css";
 const Fade = require("react-reveal/Fade");
 
-const TaskListComponent: React.FC = () => {
+const ExerciseListComponent: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
-  const tasks: TaskInterface[] = useAppSelector((state) => state.task.tasks);
-  const status: FETCH_STATUS = useAppSelector((state) => state.task.status);
+  const themes: ThemeInterface[] = useAppSelector(themeEntitiesSelector);
+  const status: FETCH_STATUS = useAppSelector((state) => state.theme.status);
 
   useEffect(() => {
-    dispatch(fetchAllTasks());
+    dispatch(fetchAllThemes());
   }, []);
 
   const showTaskList = (
@@ -25,10 +29,11 @@ const TaskListComponent: React.FC = () => {
       case FETCH_STATUS.LOADING: {
         return <SpinnerLoaderComponent />;
       }
+      //TODO Поправить это все или заменить на placeholder
       case FETCH_STATUS.LOADED: {
-        return tasks
+        return themes[getRandomNumberInRange(0, themes.length)].taskList
           .slice(0, 5)
-          .map((task) => <TaskItemComponent key={task.id} {...task} />);
+          .map((task) => <ExerciseItemComponent key={task.id} {...task} />);
       }
       case FETCH_STATUS.ERROR: {
         return <h1>Error</h1>;
@@ -55,4 +60,4 @@ const TaskListComponent: React.FC = () => {
   );
 };
 
-export default TaskListComponent;
+export default ExerciseListComponent;

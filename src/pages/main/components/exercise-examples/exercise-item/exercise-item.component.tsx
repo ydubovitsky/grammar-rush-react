@@ -1,20 +1,25 @@
 import { useEffect, useRef, useState } from "react";
 import getRandomColor from "../../../../../utils/random-color";
-import ButtonComponent from '../../../../../common/components/button/button.component';
-import styles from './task-item.module.css';
+import ButtonComponent from "../../../../../common/components/button/button.component";
+import styles from "./exercise-item.module.css";
 
 interface TaskItemInterface {
-  id: number,
-  themeName: string,
-  task: string,
-  answer: string
+  id: number;
+  themeName: string;
+  task: string;
+  answer: string;
 }
 
-const TaskItemComponent = ({ id, themeName, task, answer }: TaskItemInterface) => {
-
+const ExerciseItemComponent = ({
+  id,
+  themeName,
+  task,
+  answer,
+}: TaskItemInterface) => {
   const exerciseRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [isActive, setIsACtive] = useState(false);
-  const [userAnswer, setUserAnswer] = useState('');
+  const [userAnswer, setUserAnswer] = useState("");
 
   useEffect(() => {
     const exerciseEl = exerciseRef.current;
@@ -24,27 +29,24 @@ const TaskItemComponent = ({ id, themeName, task, answer }: TaskItemInterface) =
   }, [isActive]);
 
   const checkUserAnswerHandler = (e: React.MouseEvent<HTMLElement>): void => {
-    const exerciseEl = exerciseRef.current;
+    const inputEl = inputRef.current;
     if (userAnswer === answer) {
-      alert("Correct");
-      exerciseEl!.style.backgroundColor = "rgb(104, 247, 168)";
+      inputEl!.style.backgroundColor = "rgb(104, 247, 168)";
+    } else {
+      inputEl!.style.backgroundColor = "red";
     }
-    const divEL = document.createElement("div");
-    divEL.innerText = "You are wrong";
-    exerciseEl?.append(divEL);
-  }
+  };
 
-  const onInputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const onInputChangeHandler = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ): void => {
     setUserAnswer(e.target.value);
-  }
+  };
 
   const showTaskTitle = (themeName: string, name?: string): JSX.Element => {
     return (
       <div className={styles.title} onClick={() => setIsACtive(!isActive)}>
-        <i
-          className={`fas fa-thumbtack`}
-          style={{color: getRandomColor()}}
-        />
+        <i className={`fas fa-thumbtack`} style={{ color: getRandomColor() }} />
         <p>{themeName}</p>
         <i
           className={`fas fa-chevron-right ${
@@ -53,37 +55,41 @@ const TaskItemComponent = ({ id, themeName, task, answer }: TaskItemInterface) =
         ></i>
       </div>
     );
-  }
+  };
 
   return (
     <div className={styles.container}>
       {showTaskTitle(themeName)}
-      <div ref={exerciseRef} className={styles.exercise}>
+      <div className={styles.exercise} ref={exerciseRef}>
         <p>{task}</p>
         <input
           type="text"
-          className={styles.answerForm}
+          ref={inputRef}
+          className={styles.inputEl}
           onChange={onInputChangeHandler}
           placeholder="Input your answer"
           name="answer"
         />
-        <p>{answer}</p>
         <div className={styles.buttonsContainer}>
           <ButtonComponent
             name="Ok"
-            color="#45DE89"
+            color="#33b249"
             handler={checkUserAnswerHandler}
           />
           <ButtonComponent
             name="Hint"
-            color="#3A9BE8"
+            color="#5783db"
             handler={checkUserAnswerHandler}
           />
-          <ButtonComponent name="See answer" handler={checkUserAnswerHandler} />
+          <ButtonComponent
+            name="See answer"
+            color="#ffbd03"
+            handler={checkUserAnswerHandler}
+          />
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default TaskItemComponent;
+export default ExerciseItemComponent;
