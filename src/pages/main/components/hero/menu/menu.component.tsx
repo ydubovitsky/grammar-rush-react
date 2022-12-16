@@ -7,18 +7,12 @@ import {
 } from "../../../../../redux/features/auth/auth.slice";
 import { FETCH_STATUS } from "../../../../../redux/types";
 import styles from "./menu.module.css";
+import toggleOverflowVisibleHandler from "../../../../../utils/toggleOverflowVisible";
 
 const MenuComponent: React.FC = () => {
   const menuElementRef = useRef<HTMLDivElement>(null);
   const status: FETCH_STATUS = useSelector(authStatusSelector);
   const dispatch = useDispatch();
-
-  // Прячем/Показываем полосу прокрутки
-  const toggleOverflowVisibleHandler = (): void => {
-    const bodyEl = document.querySelector("body");
-    bodyEl!.style.overflow =
-      bodyEl!.style.overflow === "hidden" ? "visible" : "hidden";
-  };
 
   // Открываем/закрываем меню
   const menuToggleHandler = (): void => {
