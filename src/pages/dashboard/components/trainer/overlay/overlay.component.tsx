@@ -4,6 +4,7 @@ interface OverlayComponentProps {
   isScaled: boolean;
 }
 
+//! This component doesnt`t use
 const OverlayComponent: React.FC<OverlayComponentProps> = ({ isScaled }) => {
 
   const getClientHeight = (): string => {

@@ -77,15 +77,30 @@ export const themeEntitiesSelector = (state: RootState): ThemeInterface[] =>
 export const taskListByThemeIdSelector = (
   themeId: string | null,
   state: RootState
-) : TaskInterface[] | undefined => {
-  return state.theme.themeEntities.find((theme) => theme.id === parseInt(themeId ? themeId : "1"))?.taskList;
+): TaskInterface[] | undefined => {
+  console.log(themeId);
+  if (themeId) {
+    return state.theme.themeEntities.find(
+      (theme) => theme.id === parseInt(themeId)
+    )?.taskList;
+  }
+  return [];
 };
 
-export const themeNameByThemeIdSelector = (themeId: string | null, state: RootState): string | undefined => {
-  return state.theme.themeEntities.find(theme => theme.id === parseInt(themeId ? themeId: "1"))?.name;
-}
+export const themeNameByThemeIdSelector = (
+  themeId: string | null,
+  state: RootState
+): string | undefined => {
+  return state.theme.themeEntities.find(
+    (theme) => theme.id === parseInt(themeId ? themeId : "1")
+  )?.name;
+};
 
-export const themeStatusSelector = (state: RootState): FETCH_STATUS => state.theme.status;
+export const themeStatusSelector = (state: RootState): FETCH_STATUS =>
+  state.theme.status;
+
+export const getRandomThemeId = (state: RootState): number =>
+  state.theme.themeEntities.length - 1;
 
 // ------------------------------------ Default export ------------------------------------
 
