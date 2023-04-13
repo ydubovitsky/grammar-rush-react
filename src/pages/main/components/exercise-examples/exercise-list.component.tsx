@@ -31,12 +31,18 @@ const ExerciseListComponent: React.FC = (): JSX.Element => {
       }
       //TODO Поправить это все или заменить на placeholder
       case FETCH_STATUS.LOADED: {
-        return themes[getRandomNumberInRange(0, themes.length)].taskList
-          .slice(0, 5)
-          .map((task) => <ExerciseItemComponent key={task.id} {...task} />);
+        const randomThemes = themes[getRandomNumberInRange(0, themes.length)];
+
+        if (randomThemes !== undefined && randomThemes.taskList.length > 0) {
+          return randomThemes.taskList
+            .slice(0, 5)
+            .map((task) => <ExerciseItemComponent key={task.id} {...task} />);
+        } else {
+          return <h1>There are no tasks for now, sorry!</h1>;
+        }
       }
       case FETCH_STATUS.ERROR: {
-        return <h1>Error</h1>;
+        return <h1>Oops, something has gone wrong...</h1>;
       }
       default:
         return undefined;
@@ -47,14 +53,7 @@ const ExerciseListComponent: React.FC = (): JSX.Element => {
     <div className={styles.container}>
       <Fade bottom cascade>
         <SectionTitleComponent name="Exercise Examples" />
-        <div className={styles.columns}>
-          <div className={styles.column}>
-            <div className={styles.tasksContainer}>{showTaskList(status)}</div>
-          </div>
-          <div className={styles.column}>
-            <div className={styles.tasksContainer}>{showTaskList(status)}</div>
-          </div>
-        </div>
+        <div className={styles.tasksContainer}>{showTaskList(status)}</div>
       </Fade>
     </div>
   );

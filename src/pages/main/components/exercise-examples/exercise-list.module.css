@@ -1,20 +1,16 @@
 .container {
   display: grid;
-  gap: 20px;
   padding: 5%;
+  gap: 20px;
   background-color: var(--backgroundPrimary);
 }
 
-.columns {
-  display: grid;
-  /* TODO Привести в однообразие ВЕЗДЕ значение 350px */
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 5%;
-}
-
 .tasksContainer {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: 5px 5px 5px 5px rgba(235, 235, 235, 0.767);
 }
