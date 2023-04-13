@@ -1,0 +1,3 @@
+[submodule "grammar-rush-spring"]
+	path = grammar-rush-spring
+	url = https://github.com/ydubovitsky/grammar-rush-spring.git
