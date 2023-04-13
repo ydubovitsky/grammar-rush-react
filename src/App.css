@@ -20,7 +20,7 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 
 /* Track */
@@ -32,7 +32,6 @@
 ::-webkit-scrollbar-thumb {
   height: 100px;
   background: linear-gradient(var(--backgroundPrimary), var(--backgroundSecondary));
-  border-radius: 20px;
 }
 
 /* Handle on hover */
