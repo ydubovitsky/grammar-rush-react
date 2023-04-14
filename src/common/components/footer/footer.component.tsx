@@ -1,6 +1,7 @@
-import AnimatedLogoAtomicComponent from '../../atomic-components/animated-logo/animated-logo.component';
-import SocialIconsListComponent from '../social-icons-list/social-icons-list.component';
-import styles from './footer.module.css';
+import AnimatedLogoAtomicComponent from "../../atomic-components/animated-logo/animated-logo.component";
+import SocialIconsListComponent from "../social-icons-list/social-icons-list.component";
+import { Link } from "react-router-dom";
+import styles from "./footer.module.css";
 
 const FooterComponent = () => {
   return (
@@ -11,10 +12,21 @@ const FooterComponent = () => {
             <AnimatedLogoAtomicComponent />
           </div>
           <div className={styles.anchorsContainer}>
-            <p>Home |</p>
-            <p>Features |</p>
-            <p>Examples |</p>
-            <p>Download</p>
+            <Link to={"main"}>
+              <p>Main Page |</p>
+            </Link>
+            <Link to={"privacy-policy"}>
+              <p>Privacy Policy |</p>
+            </Link>
+            <Link to={"term-of-use"}>
+              <p>Term of use |</p>
+            </Link>
+            <Link to={"faq"}>
+              <p>FAQ |</p>
+            </Link>
+            <Link to={"privacy-policy"}>
+              <p>Download</p>
+            </Link>
           </div>
         </div>
         <div className={styles.contactsContainer}>
@@ -31,10 +43,10 @@ const FooterComponent = () => {
         <div className={styles.about}>
           <p>About Application</p>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse,
-            ratione et vero tempore repudiandae, quod magnam, praesentium eos
-            aliquam consequuntur labore? Culpa rem nemo ullam, soluta
-            consequuntur hic quaerat corporis!
+            Специально разработанные онлайн-упражнения направлены на изучение и
+            запоминание способов образования настоящего, прошедшего и будущего
+            времен в английском, а так же на развите других навыков, помогающих
+            вам в совершенстве овладеть языком!
           </p>
           <div className={styles.icons}>
             <SocialIconsListComponent iconSize="2rem" />
@@ -49,6 +61,6 @@ const FooterComponent = () => {
       </div>
     </div>
   );
-}
+};
 
 export default FooterComponent;
