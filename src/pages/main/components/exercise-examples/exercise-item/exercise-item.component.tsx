@@ -10,12 +10,12 @@ interface TaskItemInterface {
   answer: string;
 }
 
-const ExerciseItemComponent = ({
+const ExerciseItemComponent : React.FC<TaskItemInterface> = ({
   id,
   themeName,
   task,
   answer,
-}: TaskItemInterface) => {
+}: TaskItemInterface) : JSX.Element => {
   const exerciseRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [isActive, setIsACtive] = useState(false);
@@ -61,29 +61,29 @@ const ExerciseItemComponent = ({
     <div className={styles.container}>
       {showTaskTitle(themeName)}
       <div className={styles.exercise} ref={exerciseRef}>
-        <p>{task}</p>
+        <h1>{task}</h1>
         <input
           type="text"
           ref={inputRef}
           className={styles.inputEl}
           onChange={onInputChangeHandler}
-          placeholder="Input your answer"
+          placeholder="Введите ваш ответ"
           name="answer"
         />
         <div className={styles.buttonsContainer}>
           <ButtonComponent
-            name="Ok"
-            color="#33b249"
+            name="Проверить"
+            color="#333456"
             handler={checkUserAnswerHandler}
           />
           <ButtonComponent
-            name="Hint"
-            color="#5783db"
+            name="Показать подсказку"
+            color="#333456"
             handler={checkUserAnswerHandler}
           />
           <ButtonComponent
-            name="See answer"
-            color="#ffbd03"
+            name="Посмотреть ответ"
+            color="#333456"
             handler={checkUserAnswerHandler}
           />
         </div>

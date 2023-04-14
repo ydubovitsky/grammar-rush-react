@@ -13,23 +13,23 @@ const HeaderComponent = () => {
   const showAdminLinkEl = (): any => {
     return userRoles.includes("ADMIN") ? (
       <Link to={"admin"} className={styles.navEl}>
-        Admin
+        Панель администратора
       </Link>
     ) : null;
   };
 
   return (
     <div className={styles.container}>
-      <div className={styles.logo}>Grammar Rush</div>
+      <div className={styles.logo}>Infinity Grammar</div>
       <div className={styles.nav}>
         <Link to={"/"} className={styles.navEl}>
-          Main
+          Главная страница
         </Link>
         <Link to={"info"} className={styles.navEl}>
-          Info
+          Описание
         </Link>
         <Link to={"trainer?themeId=1"} className={styles.navEl}>
-          Trainer
+          Тренажер
         </Link>
         {showAdminLinkEl()}
         <div onClick={() => dispatch(logout())} className={styles.navEl}>

@@ -23,10 +23,10 @@
 }
 
 .anchorsContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px;
-  white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
 }
 
 .anchorsContainer a {

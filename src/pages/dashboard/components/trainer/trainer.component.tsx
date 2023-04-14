@@ -31,7 +31,7 @@ const TrainerComponent: React.FC = (): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <UnitTitleComponent text="Trainer" />
+      <UnitTitleComponent text="Интерактивный тренажер" />
       <div className={styles.trainerContainer}>
         <TasksComponent themeId={themeId} />
         <Fade right>

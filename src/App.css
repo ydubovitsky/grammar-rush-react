@@ -4,18 +4,18 @@
 }
 
 @font-face {
-  font-family: 'Lato';
-  src: local('Lato'), url(./fonts/Lato-Regular.ttf) format('truetype');
+  font-family: 'Cormorant Bold';
+  src: local('Cormorant Bold'), url(./fonts/Cormorant-Bold.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: 'AbhayaLibre';
-  src: local('AbhayaLibre'), url(./fonts/AbhayaLibre-Regular.ttf) format('truetype');
+  font-family: 'Cormorant Bold Italic';
+  src: local('Cormorant Bold Italic'), url(./fonts/Cormorant-BoldItalic.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: local('Montserrat'), url(./fonts/Montserrat-Regular.ttf) format('truetype');
+  font-family: 'Cormorant Regular';
+  src: local('Cormorant Regular'), url(./fonts/Cormorant-Regular.ttf) format('truetype');
 }
 
 /* width */
@@ -54,7 +54,7 @@
 }
 
 body {
-  font-family: 'AbhayaLibre', sans-serif;
-  font-size: 1.1rem;
+  font-family: 'Cormorant Regular', sans-serif;
+  font-size: 1.2rem;
 }
 

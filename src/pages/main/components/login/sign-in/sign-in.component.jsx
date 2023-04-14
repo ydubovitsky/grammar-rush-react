@@ -35,9 +35,9 @@ const SignInComponent = () => {
         {showLoginOrRegistrationForm()}
       </div>
       <div className={styles.right}>
-        <h1>Hello!</h1>
-        <h4>Please, login or register</h4>
-        <ButtonComponent handler={registrationHandler} name={isLogin ? "Register?" : "Login?"} />
+        <h1>Здравствуй!</h1>
+        <h4>Пожалуйста, войди или зарегистрируйся</h4>
+        <ButtonComponent handler={registrationHandler} name={isLogin ? "Зарегистрироваться?" : "Войти?"} />
       </div>
     </div>
   )

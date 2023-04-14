@@ -13,35 +13,32 @@ const FooterComponent = () => {
           </div>
           <div className={styles.anchorsContainer}>
             <Link to={"main"}>
-              <p>Main Page |</p>
+              <p>Главная страница</p>
             </Link>
             <Link to={"privacy-policy"}>
-              <p>Privacy Policy |</p>
+              <p>Политика конфеденциальности</p>
             </Link>
             <Link to={"term-of-use"}>
-              <p>Term of use |</p>
+              <p>Условия использования</p>
             </Link>
             <Link to={"faq"}>
-              <p>FAQ |</p>
+              <p>Часто задаваемые вопросы</p>
             </Link>
             <Link to={"privacy-policy"}>
-              <p>Download</p>
+              <p>Скачать</p>
             </Link>
           </div>
         </div>
         <div className={styles.contactsContainer}>
           <p>
-            <i className="fas fa-map-marked-alt"></i> Address
-          </p>
-          <p>
-            <i className="fas fa-at"></i> Email
+            <i className="fas fa-at"></i> Почта
           </p>
           <p>
             <i className="fab fa-telegram"></i> Telegram
           </p>
         </div>
         <div className={styles.about}>
-          <p>About Application</p>
+          <p>О приложении</p>
           <p>
             Специально разработанные онлайн-упражнения направлены на изучение и
             запоминание способов образования настоящего, прошедшего и будущего
@@ -55,8 +52,7 @@ const FooterComponent = () => {
       </div>
       <div className={styles.authorContainer}>
         <p>
-          © 2022 - {new Date().getFullYear()} All Rights Reserved. Created By
-          Yury Dubovitsky
+          © 2022 - {new Date().getFullYear()} Все права защищены. Создано и разработано Дубовицким Ю.А.
         </p>
       </div>
     </div>

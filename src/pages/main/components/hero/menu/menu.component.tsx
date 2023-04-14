@@ -29,17 +29,17 @@ const MenuComponent: React.FC = () => {
             to={"dashboard"}
             className={styles.menuBtn}
           >
-            Dashboard
+            Панель управления
           </Link>
           <div className={styles.menuBtn} onClick={() => dispatch(logout())}>
-            Logout
+            Выйти
           </div>
         </>
       );
     } else {
       return (
         <Link to={"/main/auth"} className={styles.menuBtn}>
-          Sign In
+          Войти
         </Link>
       );
     }
@@ -53,9 +53,9 @@ const MenuComponent: React.FC = () => {
       ></i>
       <div ref={menuElementRef} className={styles.menu}>
         {showMenuElements(status)}
-        <h1 onClick={menuToggleHandler} className={styles.menuBtn}>
-          Close
-        </h1>
+        <p onClick={menuToggleHandler} className={styles.menuBtn}>
+          Закрыть
+        </p>
       </div>
     </>
   );

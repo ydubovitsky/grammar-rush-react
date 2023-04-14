@@ -7,23 +7,22 @@ const DownloadComponent = () => {
   return (
     <div className={styles.container}>
       <Fade bottom cascade>
-        <SectionTitleComponent name="Download Anytime, Anywhere" />
+        <SectionTitleComponent name="Скачать приложение сейчас" />
         <div className={styles.columnContainer}>
           <div className={styles.firstColumn}>
             <div className={styles.block}>
-              <h1>Header</h1>
+              <h1>Легкий доступ к информации</h1>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Corporis sequi consectetur quis magnam quos quas reiciendis,
-                eligendi architecto explicabo nisi.
+                Больше не нужно носить с собой кипу учебников, достаточно
+                мобильного телефона и нашего приложение
               </p>
             </div>
             <div className={styles.block}>
-              <h1>Header</h1>
+              <h1>Удобный интерфейс</h1>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Corporis sequi consectetur quis magnam quos quas reiciendis,
-                eligendi architecto explicabo nisi.
+                Красивый, минималистичный и функциональный дизайн приложения
+                позволит вам сосредоточиться исключительно на учебе и не будет
+                перегружать вас избытком ненужной информации
               </p>
             </div>
           </div>
@@ -32,19 +31,15 @@ const DownloadComponent = () => {
           </div>
           <div className={styles.thirdColumn}>
             <div className={styles.block}>
-              <h1>Header</h1>
+              <h1>Адаптивность</h1>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Corporis sequi consectetur quis magnam quos quas reiciendis,
-                eligendi architecto explicabo nisi.
+                Размеры приложение адаптируется под ваше персональное устойство
               </p>
             </div>
             <div className={styles.block}>
-              <h1>Header</h1>
+              <h1>Абсолютно бесплатно</h1>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Corporis sequi consectetur quis magnam quos quas reiciendis,
-                eligendi architecto explicabo nisi.
+                Мы считаем, что все знания должны быть абсолютно бесплатными, поэтому используя наше приложение, вы ни за что не платите
               </p>
             </div>
           </div>

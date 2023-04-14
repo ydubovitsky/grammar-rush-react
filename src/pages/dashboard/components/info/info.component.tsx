@@ -1,27 +1,66 @@
 import styles from "./info.module.css";
-import imageSrc from "./images/alexander-grey-jU40gA2UDmA-unsplash.jpg";
 import UnitTitleComponent from "../../../../common/atomic-components/unit-title/unit-title.component";
 const Fade = require("react-reveal/Fade");
 
 const InfoComponent: React.FC = () => {
   return (
     <div className={styles.container}>
-      <UnitTitleComponent text="English exercises" />
-      <div className={styles.description}>
-        <Fade bottom cascade>
-          <img src={imageSrc} alt="" />
+      <Fade bottom cascade>
+        <div className={styles.feature}>
+          <UnitTitleComponent text="Для кого это приложение?" />
           <p>
-            This section contains exercises in English. With their help, you can
-            consolidate or test knowledge. Exercises are available without
-            registration, SMS and other complex body movements, they are not
-            taken from collections, textbooks, but invented by me personally.
-            All exercises are given with answers, translation, places with
-            hints, the correctness of the answers is checked automatically. Most
-            of the exercises are designed for beginners, they are designed to
-            consolidate the material.
+            Этот симулятор создан специально для тех, кто хочет улучшить свои
+            знания в области английской грамматики удобным способом. Принцип
+            работы веб-приложения основан на упражнениях в форме теста, которые
+            помогут вам легче и быстрее запоминать новые грамматические обороты.
+            В то же время не забыть старые.
           </p>
-        </Fade>
-      </div>
+          <p>
+            Посвящая изучению грамматики всего несколько минут в день, в короткое
+            время вы увидите, как улучшаются ваши навыки. Кроме того, вы
+            улучшите понимание английской речи на слух, так как все варианты
+            слов в упражнениях имеют английский произношение.
+          </p>
+        </div>
+        <div className={styles.feature}>
+          <UnitTitleComponent text="Преимущество нашего подходка к изучению грамматики" />
+          <p>
+            Мы понимаем, что грамматика – достаточно сложная часть языка,
+            особенно если человек впервые сталкивается с временами английского,
+            так непохожими на времена русского языка. Поэтому мы разработали
+            онлайн-тренажер, учитывающий разные уровни владения материалом.
+            <ul>
+              <li> Условия заданий даются на русском языке</li>
+              <li>Все упражнения дополнены примерами</li>
+              <li>
+                Правильный ответ или перевод показывается сразу после выполнения
+                задания
+              </li>
+              <li>
+                Разноплановые темы помогают определять времена в английском
+                языке в зависимости от глаголов и дополнительных частей речи
+              </li>
+              <li>
+                Задания направлены не только на тренировку грамматики, но и
+                запоминание лексики, изучение способов словообразования и
+                фонетики.
+              </li>
+              <li>
+                Аудио-сопровождение поможет правильно произносить отдельные
+                слова и отрабатывать интонацию
+              </li>
+            </ul>
+          </p>
+        </div>
+        <div className={styles.feature}>
+          <UnitTitleComponent text="Грамматика – это просто!" />
+          <p>
+            Специально разработанные онлайн-упражнения направлены на изучение и
+            запоминание способов образования настоящего, прошедшего и будущего
+            времен в английском языке. 
+          </p>
+        </div>
+      </Fade>
     </div>
   );
 };

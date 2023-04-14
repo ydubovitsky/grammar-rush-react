@@ -3,68 +3,68 @@
 
 version: '3'
 services:
-  # You can rename this service special for docker-hub like: ydubovitsky/grammar-rush
-  grammar-rush-spring:
+  # You can rename this service special for docker-hub like: ydubovitsky/infinity-grammar
+  infinity-grammar-spring:
     build:
-      context: ./grammar-rush-spring
+      context: ./infinity-grammar-spring
       dockerfile: ./docker/production/Dockerfile
     environment:
       PROFILE_ACTIVE: postgres
       ADMIN_NAME: admin
       ADMIN_PASSWORD: password
-      POSTGRES_URL: jdbc:postgresql://grammar-rush-db:5432/postgres
+      POSTGRES_URL: jdbc:postgresql://infinity-grammar-db:5432/postgres
       POSTGRES_USERNAME: postgres
       POSTGRES_PASSWORD: changeme
       POSTGRES_DDL_AUTO: update
     depends_on:
-      - grammar-rush-db
-      - grammar-rush-pgadmin
+      - infinity-grammar-db
+      - infinity-grammar-pgadmin
     networks:
-      - grammar-rush
+      - infinity-grammar
 
-  grammar-rush-react:
+  infinity-grammar-react:
     build:
       context: .
       dockerfile: ./docker/static-server/Dockerfile
       args:
         # Change me!
-        - REACT_APP_BACKEND_URL=http://api.grammar-rush.ru
+        - REACT_APP_BACKEND_URL=http://api.infinity-grammar.ru
     networks:
-     - grammar-rush
+     - infinity-grammar
 
-  grammar-rush-db:
+  infinity-grammar-db:
     image: postgres:alpine3.17
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: changeme
       PGDATA: /data/postgres
     volumes:
-      - grammar-rush-db:/data/postgres
+      - infinity-grammar-db:/data/postgres
     networks:
-      - grammar-rush
+      - infinity-grammar
     restart: unless-stopped
 
-  grammar-rush-pgadmin:
-    container_name: grammar-rush-pgadmin
+  infinity-grammar-pgadmin:
+    container_name: infinity-grammar-pgadmin
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
       PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
-      - grammar-rush-pgadmin:/var/lib/pgadmin
+      - infinity-grammar-pgadmin:/var/lib/pgadmin
     depends_on:
-      - grammar-rush-db
+      - infinity-grammar-db
     ports:
       - "${PGADMIN_PORT:-5050}:80"
     networks:
-      - grammar-rush
+      - infinity-grammar
     restart: unless-stopped
 
 networks:
-  grammar-rush:
+  infinity-grammar:
     driver: bridge
 
 volumes:
-  grammar-rush-db:
-  grammar-rush-pgadmin:
+  infinity-grammar-db:
+  infinity-grammar-pgadmin:

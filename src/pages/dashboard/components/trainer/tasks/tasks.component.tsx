@@ -92,7 +92,7 @@ const TasksComponent: FC<TasksComponentProps> = ({ themeId }: TasksComponentProp
 
 
   if (tasks === undefined || tasks.length === 0) {
-    return <h3>There is no task...</h3>;
+    return <h3>Тут нет доступных заданий...</h3>;
   }
 
   return (
@@ -104,18 +104,18 @@ const TasksComponent: FC<TasksComponentProps> = ({ themeId }: TasksComponentProp
       <p className={styles.text}>{tasks[index].task}</p>
       <input
         type="text"
-        placeholder="Your answer"
+        placeholder="Введите ответ"
         ref={inputRef}
         onChange={(e) => setAnswerText(e.target.value)}
       />
       <div className={styles.buttons}>
         <ButtonComponent
-          name="Next"
+          name="Следующая задача"
           handler={() => setIndex(getNextIndex(0, tasks.length - 1))}
         />
-        <ButtonComponent name="Check answer" handler={checkAnswerHandler} />
-        <p>Wrong: {counter.wrong}</p>
-        <p>Correct: {counter.correct}</p>
+        <ButtonComponent name="Проверить" handler={checkAnswerHandler} />
+        <p>Верно: {counter.wrong}</p>
+        <p>Ошибок: {counter.correct}</p>
       </div>
     </div>
   );

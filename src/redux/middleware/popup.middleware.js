@@ -2,82 +2,68 @@ import { showPopup } from '../features/popup/popup-slice';
 
 const POPUP_PROPERTIES = {
   loginRejected: {
-    message: "LOGIN ERROR",
+    message: "Ошибка входа",
     styles: {
       color: "white",
       backgroundColor: "red"
     }
   },
   loginFulfilled: {
-    message: "You are successfully login",
+    message: "Вы успешно осуществили вход",
     styles: {
       color: "white",
       backgroundColor: "#4BE066"
     }
   },
   logout: {
-    message: "You are logged out from your account",
+    message: "Вы вышли из вашей учетной записи",
     styles: {
       color: "white",
       backgroundColor: "#4BE066"
     }
   },
   themeCreateFulfilled: {
-    message: "Theme successfully created",
+    message: "Новая тема успешно создана",
     styles: {
       color: "white",
       backgroundColor: "#01C9F7"
     }
   },
   taskAddFulfilled: {
-    message: "New task successfully added",
+    message: "Добавлена новая задача",
     styles: {
       color: "white",
       backgroundColor: "#4BE066"
     }
   },
   updateUserDataUpdated: {
-    message: "User data successfully updated",
+    message: "Данные пользователя обновлены",
     styles: {
       color: "white",
       backgroundColor: "#4BE066"
     }
   },
   authRegistrationFulfilled: {
-    message: "Congratulation! You have registered successfully yet. Now, you can come in!",
+    message: "Поздравлчем, вы успешно зарегистрировались!",
     styles: {
       color: "white",
       backgroundColor: "#4BE066"
     }
   },
   authRegistrationRejected: {
-    message: "Sorry, this username already exists",
+    message: "Это имя пользователя занято",
     styles: {
       color: "white",
       backgroundColor: "red"
     }
   },
   updateUserDataRejected: {
-    message: "User data updating error",
+    message: "Ошибка обновления данных",
     styles: {
       color: "white",
       backgroundColor: "red"
     }
   },
-  setFavoriteFulfilled: {
-    message: "Favorite!",
-    styles: {
-      color: "white",
-      backgroundColor: "#4BE066"
-    }
-  },
-  updateCardSetFulfilled: {
-    message: "Cardset updated!",
-    styles: {
-      color: "white",
-      backgroundColor: "#4BE066"
-    }
-  }
 }
 
 const PopupMiddleware = ({ dispatch, getState }) => next => action => {

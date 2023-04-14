@@ -29,7 +29,7 @@ const LoginForm = () => {
 
   const showIsUserExist = (status) => {
     if (status === FETCH_STATUS.ERROR) {
-      return <h3>Ooops, wrong username/password</h3>
+      return <h3>Упс... Неправильные имя пользователя или пароль</h3>
     }
   }
 
@@ -42,16 +42,16 @@ const LoginForm = () => {
   return (
     <div className="">
       <div className={styles.left}>
-        <h1>Login</h1>
+        <h1>Войти</h1>
         {showIsUserExist(status)}
         <div className={cn(styles.form)}>
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">Имя пользователя</label>
           <input type="text" name="username" onChange={handleFormChange} />
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Пароль</label>
           <input type="password" name="password" onChange={handleFormChange} />
           <div className={styles.buttons}>
-            <ButtonComponent handler={() => dispatch(login(form))} name="Log In" />
-            <ButtonComponent handler={() => navigate("/")} name="Cancel" />
+            <ButtonComponent handler={() => dispatch(login(form))} name="Войти" />
+            <ButtonComponent handler={() => navigate("/")} name="Отмена" />
           </div>
         </div>
       </div>

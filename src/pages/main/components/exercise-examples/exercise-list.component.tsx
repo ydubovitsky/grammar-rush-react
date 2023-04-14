@@ -38,11 +38,11 @@ const ExerciseListComponent: React.FC = (): JSX.Element => {
             .slice(0, 5)
             .map((task) => <ExerciseItemComponent key={task.id} {...task} />);
         } else {
-          return <h1>There are no tasks for now, sorry!</h1>;
+          return <h1>Здесь нет задач, заходите позже...</h1>;
         }
       }
       case FETCH_STATUS.ERROR: {
-        return <h1>Oops, something has gone wrong...</h1>;
+        return <h1>Упс, что-то пошло не по плану, мы уже работаем над проблемой</h1>;
       }
       default:
         return undefined;
@@ -52,7 +52,7 @@ const ExerciseListComponent: React.FC = (): JSX.Element => {
   return (
     <div className={styles.container}>
       <Fade bottom cascade>
-        <SectionTitleComponent name="Exercise Examples" />
+        <SectionTitleComponent name="Примеры упражнений" />
         <div className={styles.tasksContainer}>{showTaskList(status)}</div>
       </Fade>
     </div>

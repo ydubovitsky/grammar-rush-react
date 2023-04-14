@@ -11,18 +11,18 @@ interface FeaturePropsInterface {
 const featuresData: FeaturePropsInterface[] = [
   {
     icon: "fas fa-meteor",
-    title: "Quick Boostup",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi consequatur eligendi quaerat maxime quasi similique beatae accusamus ad? Facilis asperiores nisi, ullam iure laudantium eos dignissimos necessitatibus architecto natus!",
+    title: "Неограниченное число упражнений",
+    text: "Онлайн-тренажер по грамматике английского языка Infinity Grammar — это бесконечные упражнения, позволяющие оттачить ваши навыки до автоматизма",
   },
   {
     icon: "fas fa-feather-alt",
-    title: "Modern Design",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi consequatur eligendi quaerat maxime quasi similique beatae accusamus ad? Facilis asperiores nisi, ullam iure laudantium eos dignissimos necessitatibus architecto natus!",
+    title: "Современный дизайн",
+    text: "Красивый, минималистичный и функциональный дизайн приложения позволит вам сосредоточиться исключительно на учебе и не будет перегружать вас избытком ненужной информации",
   },
   {
     icon: "far fa-lightbulb",
-    title: "High Resolution",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sequi consequatur eligendi quaerat maxime quasi similique beatae accusamus ad? Facilis asperiores nisi, ullam iure laudantium eos dignissimos necessitatibus architecto natus!",
+    title: "Обновления и поддержка",
+    text: "Команда разработчиков открыта предложений от пользователей, мы постоянно работаем на улучшением нашего продукта",
   },
 ];
 
@@ -45,13 +45,12 @@ const FeaturesComponent: React.FC = () => {
     <div className={styles.container}>
       <Fade bottom cascade>
         <SectionTitleComponent
-          name="Amazing Features To Use
-        Our Application"
+          name="Потрясающие особенности нашего приложения"
         />
         <div className={styles.featuresContainer}>
           {showFeatureEl(featuresData)}
         </div>
-        <ButtonComponent name="Start now" />
+        <ButtonComponent name="Начать прямо сейчас" />
       </Fade>
     </div>
   );

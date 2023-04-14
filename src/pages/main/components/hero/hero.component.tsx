@@ -13,9 +13,9 @@ const HeroComponent: React.FC = () => {
         <Fade bottom cascade>
           <div className={styles.content}>
             <AnimatedLogoAtomicComponent />
-            <h2>The best application for learning grammar</h2>
-            <h1>Mobile and Web Application</h1>
-            <ButtonComponent name="Download" />
+            <h1>Лучшее приложение для изучения грамматики</h1>
+            <h3>Доступны мобильное и веб приложение</h3>
+            <ButtonComponent name="Скачать" />
           </div>
         </Fade>
         <div className={styles.circleButton}>

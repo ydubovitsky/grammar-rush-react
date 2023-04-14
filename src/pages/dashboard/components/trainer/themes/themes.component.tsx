@@ -10,14 +10,13 @@ const ThemesComponent = () => {
     return themeEntities.map(({ id, name, taskList }) => (
       <Link className={styles.themeName} key={id} to={`?themeId=${id}`}>
         <p>{name}</p>
-        <p>({taskList.length})</p>
       </Link>
     ));
   };
 
   return (
     <div className={styles.container}>
-      <h1>Themes</h1>
+      <h1>Темы</h1>
       <div className={styles.themesList}>{showAllThemesEl()}</div>
     </div>
   );

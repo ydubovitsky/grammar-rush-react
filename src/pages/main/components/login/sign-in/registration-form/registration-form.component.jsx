@@ -32,20 +32,18 @@ const RegistrationForm = () => {
   return (
     <div className="">
       <div className={styles.left}>
-        <h1>Registration</h1>
+        <h1>Регистрация</h1>
         {showIsUserExist(status)}
         <div className={cn(styles.form)}>
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">Имя пользователя</label>
           <input type="text" name="username" onChange={handleFormChange} />
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Пароль</label>
           <input type="password" name="password" onChange={handleFormChange} />
-          <label htmlFor="password">Verification password</label>
+          <label htmlFor="password">Подтвердить пароль</label>
           <input type="password" name="password2" onChange={handleFormChange} />
-          <label htmlFor="email">Email</label>
-          <input type="text" name="email" onChange={handleFormChange} />
           <div className={styles.buttons}>
-            <ButtonComponent handler={() => dispatch(register(form))} name="Register" />
-            <ButtonComponent handler={() => navigate("/")} name="Cancel" />
+            <ButtonComponent handler={() => dispatch(register(form))} name="Зарегистрироваться" />
+            <ButtonComponent handler={() => navigate("/")} name="Отмена" />
           </div>
         </div>
       </div>
