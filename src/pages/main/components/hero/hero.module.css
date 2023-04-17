@@ -18,8 +18,6 @@
 
 .content h1 {
   font-size: 3.5rem;
-  font-family: 'Cormorant Bold', sans-serif;
-  /* font-weight: bold; */
   color: var(--textSecondary);
   text-transform: uppercase;
 }

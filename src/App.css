@@ -1,22 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
 @font-face {
   font-family: 'Spice Rice';
   src: local('Spice Rice'), url(./fonts/SpicyRice-Regular.ttf) format('truetype');
 }
 
-@font-face {
-  font-family: 'Cormorant Bold';
-  src: local('Cormorant Bold'), url(./fonts/Cormorant-Bold.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Cormorant Bold Italic';
-  src: local('Cormorant Bold Italic'), url(./fonts/Cormorant-BoldItalic.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Cormorant Regular';
-  src: local('Cormorant Regular'), url(./fonts/Cormorant-Regular.ttf) format('truetype');
-}
 
 /* width */
 ::-webkit-scrollbar {
@@ -54,7 +41,5 @@
 }
 
 body {
-  font-family: 'Cormorant Regular', sans-serif;
-  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
 }
-

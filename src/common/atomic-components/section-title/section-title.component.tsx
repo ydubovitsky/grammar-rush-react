@@ -7,7 +7,7 @@ type SectionTitlePropsType = {
 const SectionTitleComponent: React.FC<SectionTitlePropsType> = ({ name }) => {
   return (
     <div className={styles.container}>
-      <p>{name}</p>
+      <h2>{name}</h2>
       <div className={styles.line}></div>
     </div>
   )
