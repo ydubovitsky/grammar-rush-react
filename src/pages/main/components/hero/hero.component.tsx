@@ -14,7 +14,7 @@ const HeroComponent: React.FC = () => {
           <div className={styles.content}>
             <AnimatedLogoAtomicComponent />
             <h1>Лучшее приложение для изучения грамматики</h1>
-            <h3>Доступны мобильное и веб приложение</h3>
+            <h2>Доступны мобильное и веб приложение</h2>
             <ButtonComponent name="Скачать" />
           </div>
         </Fade>
