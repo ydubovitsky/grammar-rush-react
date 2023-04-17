@@ -6,12 +6,12 @@ import {
   logout,
 } from "../../../../redux/features/auth/auth.slice";
 
-const HeaderComponent = () => {
+const HeaderComponent : React.FC = () : JSX.Element => {
   const userRoles = useSelector(userRolesSelector);
   const dispatch = useDispatch();
 
-  const showAdminLinkEl = (): any => {
-    return userRoles.includes("ADMIN") ? (
+  const showAdminLinkEl = (): JSX.Element | null => {
+    return userRoles?.includes("ADMIN") ? (
       <Link to={"admin"} className={styles.navEl}>
         Панель администратора
       </Link>

@@ -18,14 +18,14 @@ const RoutesComponent = () => (
       <Route path="main" element={<MainPage />}>
         <Route path="auth" element={<SignInComponent />} />
       </Route>
-      <Route element={<RequireAuthRoute />}>
-        <Route path="dashboard" element={<DashboardPage />}>
-          <Route index element={<InfoComponent />} />
-          <Route path="info" element={<InfoComponent />} />
-          <Route path="trainer" element={<TrainerComponent />} />
+      <Route path="dashboard" element={<DashboardPage />}>
+        <Route index element={<InfoComponent />} />
+        <Route path="info" element={<InfoComponent />} />
+        <Route path="trainer" element={<TrainerComponent />} />
+        <Route element={<RequireAuthRoute />}>
           <Route path="admin" element={<AdminComponent />} />
-          <Route path="*" element={<Navigate to="info" replace />} />
         </Route>
+        <Route path="*" element={<Navigate to="info" replace />} />
       </Route>
       <Route path="faq" element={<FaqPage />} />
       <Route path="privacy-policy" element={<PrivacyPolicyPage />} />

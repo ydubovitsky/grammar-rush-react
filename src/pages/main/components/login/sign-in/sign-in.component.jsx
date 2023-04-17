@@ -18,8 +18,6 @@ const SignInComponent = () => {
     setIsLogin(!isLogin);
   }
 
-  console.log(status);
-
   if (status === 'succeeded' || status === 'created') {
     navigate("/");
   }

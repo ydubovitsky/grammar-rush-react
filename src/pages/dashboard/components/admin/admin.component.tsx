@@ -16,11 +16,11 @@ const AdminComponent : React.FC = () : JSX.Element => {
     dispatch(fetchAllThemes())
   }, [])
 
-  const onThemeChangedHandler = (e: any) => {
+  const onThemeChangedHandler = (e: any) : void => {
     setTheme({ name: e.target.value });
   };
 
-  const onTaskChangedHandler = (e: any) => {
+  const onTaskChangedHandler = (e: any) : void => {
     setTask({
       ...task,
       [e.target.name]: e.target.value,

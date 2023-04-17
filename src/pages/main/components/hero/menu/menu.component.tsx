@@ -24,17 +24,9 @@ const MenuComponent: React.FC = () => {
   const showMenuElements = (status: string) => {
     if (status === FETCH_STATUS.AUTHENTICATED) {
       return (
-        <>
-          <Link
-            to={"dashboard"}
-            className={styles.menuBtn}
-          >
-            Панель управления
-          </Link>
-          <div className={styles.menuBtn} onClick={() => dispatch(logout())}>
-            Выйти
-          </div>
-        </>
+        <div className={styles.menuBtn} onClick={() => dispatch(logout())}>
+          Выйти
+        </div>
       );
     } else {
       return (
@@ -53,6 +45,9 @@ const MenuComponent: React.FC = () => {
       ></i>
       <div ref={menuElementRef} className={styles.menu}>
         {showMenuElements(status)}
+        <Link to={"dashboard"} className={styles.menuBtn}>
+          Панель управления
+        </Link>
         <p onClick={menuToggleHandler} className={styles.menuBtn}>
           Закрыть
         </p>
