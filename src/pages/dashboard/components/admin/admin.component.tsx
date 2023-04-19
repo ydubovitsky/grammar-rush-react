@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useAppSelector } from "../../../../redux/hooks/hooks";
 import UnitTitleComponent from "../../../../common/atomic-components/unit-title/unit-title.component";
 import ButtonComponent from "../../../../common/components/button/button.component";
 import { addNewTask } from "../../../../redux/features/task/task.slice";
-import { TaskInterface } from "../../../../types";
+import { TaskInterface, ThemeInterface } from "../../../../types";
 import {
   addNewTheme,
   fetchAllThemes,
@@ -12,9 +13,15 @@ import {
 import styles from "./admin.module.css";
 
 const AdminComponent: React.FC = (): JSX.Element => {
-  const [theme, setTheme] = useState({});
-  const [task, setTask] = useState<TaskInterface>({answer: "", task: "", themeName: ""});
-  const themesNameList = useSelector(themesNameListSelector);
+  const [theme, setTheme] = useState<ThemeInterface>({
+    themeName: "",
+  });
+  const [task, setTask] = useState<TaskInterface>({
+    answer: "",
+    task: "",
+    themeName: "",
+  });
+  const themesNameList = useAppSelector(themesNameListSelector);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,7 +35,7 @@ const AdminComponent: React.FC = (): JSX.Element => {
       typeof e.target.value === "string" &&
       e.target.value.replace(/ /g, "") !== ""
     ) {
-      setTheme({ name: e.target.value });
+      setTheme({ themeName: e.target.value });
     }
   };
 
@@ -42,17 +49,19 @@ const AdminComponent: React.FC = (): JSX.Element => {
     });
   };
 
-  const saveNewThemeHandler = () => {
-    dispatch(addNewTheme(theme));
+  const saveNewThemeHandler = (theme: ThemeInterface): void => {
+    if (theme.themeName.replace(/\s/g, "") !== "") {
+      dispatch(addNewTheme(theme));
+    }
   };
 
-  const saveNewTaskHandler = () => {
-    if (task.themeName.replace(/\s/g, '') !== "") {
+  const saveNewTaskHandler = (task: TaskInterface): void => {
+    if (task.themeName.replace(/\s/g, "") !== "") {
       dispatch(addNewTask(task));
     }
   };
 
-  const showThemeListOptionsEl = () => {
+  const showThemeListOptionsEl = (themesNameList: string[]): JSX.Element[] => {
     return themesNameList.map((name) => (
       <option key={name} value={name}>
         {name}
@@ -67,7 +76,7 @@ const AdminComponent: React.FC = (): JSX.Element => {
         <div className={styles.taskContainer}>
           <label htmlFor="themeName">Тема</label>
           <select name="themeName" onChange={onTaskChangedHandler}>
-            {showThemeListOptionsEl()}
+            {showThemeListOptionsEl(themesNameList)}
           </select>
 
           <label htmlFor="task">Задание</label>
@@ -80,7 +89,7 @@ const AdminComponent: React.FC = (): JSX.Element => {
           <input type="text" name="hint" onChange={onTaskChangedHandler} />
           <ButtonComponent
             name="Добавить новую задачу"
-            handler={saveNewTaskHandler}
+            handler={() => saveNewTaskHandler(task)}
           />
         </div>
         <div className={styles.themeContainer}>
@@ -88,7 +97,7 @@ const AdminComponent: React.FC = (): JSX.Element => {
           <input type="text" name="newTheme" onChange={onThemeChangedHandler} />
           <ButtonComponent
             name="Сохранить тему"
-            handler={saveNewThemeHandler}
+            handler={() => saveNewThemeHandler(theme)}
           />
         </div>
       </div>

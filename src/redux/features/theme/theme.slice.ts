@@ -11,15 +11,15 @@ interface ThemeStateInterface {
   error: null | string;
 }
 
-export const addNewTheme: any = createAsyncThunk("theme/add", async (data) => {
+//TODO Добавить тип ответа!
+export const addNewTheme: any = createAsyncThunk<ThemeInterface, ThemeInterface>("theme/add", async (data) => {
   const response = await fetchData({
     method: "POST",
     data: data,
     url: `${BASE_URL}/api/v1/theme/add`,
     responseType: "json",
   });
-  const result = (await response) as ThemeInterface;
-  return result;
+  return response;
 });
 
 export const fetchAllThemes: any = createAsyncThunk(
@@ -30,8 +30,7 @@ export const fetchAllThemes: any = createAsyncThunk(
       url: `${BASE_URL}/api/v1/theme/all`,
       responseType: "json",
     });
-    const result = (await response) as ThemeInterface[];
-    return result;
+    return response;
   }
 );
 
@@ -51,6 +50,8 @@ const themeSlice = createSlice({
         state.status = FETCH_STATUS.LOADING;
       })
       .addCase(addNewTheme.fulfilled, (state, action) => {
+        //TODO Добавить типизацию
+        state.themeEntities.push(action.payload);
         state.status = FETCH_STATUS.LOADED;
       })
       .addCase(addNewTheme.rejected, (state, action) => {
@@ -69,7 +70,7 @@ const themeSlice = createSlice({
 // ------------------------------------ Selectors ------------------------------------
 
 export const themesNameListSelector = (state: RootState): string[] =>
-  state.theme.themeEntities.map((theme) => theme.name);
+  state.theme.themeEntities.map((theme) => theme.themeName);
 
 export const themeEntitiesSelector = (state: RootState): ThemeInterface[] =>
   state.theme.themeEntities;
@@ -93,7 +94,7 @@ export const themeNameByThemeIdSelector = (
 ): string | undefined => {
   return state.theme.themeEntities.find(
     (theme) => theme.id === parseInt(themeId ? themeId : "1")
-  )?.name;
+  )?.themeName;
 };
 
 export const themeStatusSelector = (state: RootState): FETCH_STATUS =>

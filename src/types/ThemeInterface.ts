@@ -1,7 +1,7 @@
 import { TaskInterface } from "./TaskInterface"
 
 export interface ThemeInterface {
-  id: number,
-  name: string,
-  taskList: TaskInterface[]
+  id?: number,
+  themeName: string,
+  taskList?: TaskInterface[]
 }

@@ -7,9 +7,9 @@ const ThemesComponent = () => {
   const themeEntities = useSelector(themeEntitiesSelector);
 
   const showAllThemesEl = () => {
-    return themeEntities.map(({ id, name, taskList }) => (
+    return themeEntities.map(({ id, themeName, taskList }) => (
       <Link className={styles.themeName} key={id} to={`?themeId=${id}`}>
-        <p>{name}</p>
+        <p>{themeName}</p>
       </Link>
     ));
   };
