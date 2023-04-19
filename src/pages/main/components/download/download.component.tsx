@@ -1,12 +1,12 @@
 import SectionTitleComponent from "../../../../common/atomic-components/section-title/section-title.component";
 import styles from "./download.module.css";
 import image from "./images/ipad-hand.png";
-const Fade = require("react-reveal/Fade");
+import { Fade, Slide } from "react-awesome-reveal";
 
 const DownloadComponent = () => {
   return (
     <div className={styles.container}>
-      <Fade bottom cascade>
+      <Fade>
         <SectionTitleComponent name="Скачать приложение сейчас" />
         <div className={styles.columnContainer}>
           <div className={styles.firstColumn}>

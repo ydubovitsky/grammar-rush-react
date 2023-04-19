@@ -68,9 +68,9 @@ const TasksComponent: FC<TasksComponentProps> = ({ themeId }: TasksComponentProp
   };
 
   // Проверяем корректность ответа пользователя и меняем цвет окна
-  const checkAnswerHandler = (): void => {
+  const checkAnswerHandler = (task : TaskInterface): void => {
     if (tasks !== undefined) {
-      if (answerText == tasks[index].answer) {
+      if (answerText === task.answer) {
         setCounter({ ...counter, correct: counter.correct + 1 });
         changeExerciseContainerBackgroundHandler(
           EXERCISES_CONTAINER_STYLES.CORRECT
@@ -113,9 +113,9 @@ const TasksComponent: FC<TasksComponentProps> = ({ themeId }: TasksComponentProp
           name="Следующая задача"
           handler={() => setIndex(getNextIndex(0, tasks.length - 1))}
         />
-        <ButtonComponent name="Проверить" handler={checkAnswerHandler} />
-        <p>Верно: {counter.wrong}</p>
-        <p>Ошибок: {counter.correct}</p>
+        <ButtonComponent name="Проверить" handler={() => checkAnswerHandler(tasks[index])} />
+        <p>Верно: {counter.correct}</p>
+        <p>Ошибок: {counter.wrong}</p>
       </div>
     </div>
   );

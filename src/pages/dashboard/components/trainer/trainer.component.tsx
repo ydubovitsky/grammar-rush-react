@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Fade } from "react-awesome-reveal";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import UnitTitleComponent from "../../../../common/atomic-components/unit-title/unit-title.component";
@@ -10,7 +11,6 @@ import {
 import TasksComponent from "./tasks/tasks.component";
 import ThemesComponent from "./themes/themes.component";
 import styles from "./trainer.module.css";
-const Fade = require("react-reveal/Fade");
 
 const TrainerComponent: React.FC = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const TrainerComponent: React.FC = (): JSX.Element => {
       <UnitTitleComponent text="Интерактивный тренажер" />
       <div className={styles.trainerContainer}>
         <TasksComponent themeId={themeId} />
-        <Fade right>
+        <Fade>
           <ThemesComponent />
         </Fade>
       </div>

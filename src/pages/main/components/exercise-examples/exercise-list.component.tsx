@@ -11,7 +11,7 @@ import { ThemeInterface } from "../../../../types";
 import getRandomNumberInRange from "../../../../utils/randomNumberInRange";
 import ExerciseItemComponent from "./exercise-item/exercise-item.component";
 import styles from "./exercise-list.module.css";
-const Fade = require("react-reveal/Fade");
+import { Fade } from "react-awesome-reveal";
 
 const ExerciseListComponent: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -22,27 +22,37 @@ const ExerciseListComponent: React.FC = (): JSX.Element => {
     dispatch(fetchAllThemes());
   }, []);
 
-  const showTaskList = (
-    status: FETCH_STATUS
-  ): JSX.Element | JSX.Element[] | undefined => {
+  const getRandomTheme = (): JSX.Element => {
+    if (typeof themes != "undefined" && Array.isArray(themes)) {
+      const randomTheme = themes[getRandomNumberInRange(0, themes.length)];
+      if (typeof randomTheme != "undefined" && randomTheme.hasOwnProperty('taskList') && typeof randomTheme.taskList != "undefined") {
+        return (
+          <div className={styles.themes}>
+            {randomTheme.taskList
+              .slice(0, 5)
+              .map((task) => (
+                <ExerciseItemComponent key={task.id} {...task} />
+              ))}
+          </div>
+        );
+      }
+      return <h1>Здесь нет задач, заходите позже...</h1>;
+    }
+    return <h1>Здесь нет задач, заходите позже...</h1>;
+  };
+
+  const showTaskList = (status: FETCH_STATUS): JSX.Element | undefined => {
     switch (status) {
       case FETCH_STATUS.LOADING: {
         return <SpinnerLoaderComponent />;
       }
-      //TODO Поправить это все или заменить на placeholder
       case FETCH_STATUS.LOADED: {
-        const randomThemes = themes[getRandomNumberInRange(0, themes.length)];
-
-        if (randomThemes !== undefined && randomThemes.taskList.length > 0) {
-          return randomThemes.taskList
-            .slice(0, 5)
-            .map((task) => <ExerciseItemComponent key={task.id} {...task} />);
-        } else {
-          return <h1>Здесь нет задач, заходите позже...</h1>;
-        }
+        return getRandomTheme();
       }
       case FETCH_STATUS.ERROR: {
-        return <h1>Упс, что-то пошло не по плану, мы уже работаем над проблемой</h1>;
+        return (
+          <h1>Упс, что-то пошло не по плану, мы уже работаем над проблемой</h1>
+        );
       }
       default:
         return undefined;
@@ -51,7 +61,7 @@ const ExerciseListComponent: React.FC = (): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <Fade bottom cascade>
+      <Fade>
         <SectionTitleComponent name="Примеры упражнений" />
         <div className={styles.tasksContainer}>{showTaskList(status)}</div>
       </Fade>

@@ -3,24 +3,39 @@ import { useDispatch, useSelector } from "react-redux";
 import UnitTitleComponent from "../../../../common/atomic-components/unit-title/unit-title.component";
 import ButtonComponent from "../../../../common/components/button/button.component";
 import { addNewTask } from "../../../../redux/features/task/task.slice";
-import { addNewTheme, fetchAllThemes, themesNameListSelector } from "../../../../redux/features/theme/theme.slice";
+import { TaskInterface } from "../../../../types";
+import {
+  addNewTheme,
+  fetchAllThemes,
+  themesNameListSelector,
+} from "../../../../redux/features/theme/theme.slice";
 import styles from "./admin.module.css";
 
-const AdminComponent : React.FC = () : JSX.Element => {
+const AdminComponent: React.FC = (): JSX.Element => {
   const [theme, setTheme] = useState({});
-  const [task, setTask] = useState({});
+  const [task, setTask] = useState<TaskInterface>({answer: "", task: "", themeName: ""});
   const themesNameList = useSelector(themesNameListSelector);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAllThemes())
-  }, [])
+    dispatch(fetchAllThemes());
+  }, []);
 
-  const onThemeChangedHandler = (e: any) : void => {
-    setTheme({ name: e.target.value });
+  const onThemeChangedHandler = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ): void => {
+    if (
+      typeof e.target.value === "string" &&
+      e.target.value.replace(/ /g, "") !== ""
+    ) {
+      setTheme({ name: e.target.value });
+    }
   };
 
-  const onTaskChangedHandler = (e: any) : void => {
+  const onTaskChangedHandler = (
+    e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
+  ): void => {
+    console.log(e.target.value);
     setTask({
       ...task,
       [e.target.name]: e.target.value,
@@ -32,11 +47,17 @@ const AdminComponent : React.FC = () : JSX.Element => {
   };
 
   const saveNewTaskHandler = () => {
-    dispatch(addNewTask(task));
+    if (task.themeName.replace(/\s/g, '') !== "") {
+      dispatch(addNewTask(task));
+    }
   };
 
   const showThemeListOptionsEl = () => {
-    return themesNameList.map(name => <option key={name} value={name}>{name}</option>);
+    return themesNameList.map((name) => (
+      <option key={name} value={name}>
+        {name}
+      </option>
+    ));
   };
 
   return (
@@ -44,27 +65,27 @@ const AdminComponent : React.FC = () : JSX.Element => {
       <UnitTitleComponent text="Панель администратора" />
       <div className={styles.formsContainer}>
         <div className={styles.taskContainer}>
-          <label htmlFor="theme">Тема</label>
-          <select name="theme" onChange={onTaskChangedHandler}>{showThemeListOptionsEl()}</select>
+          <label htmlFor="themeName">Тема</label>
+          <select name="themeName" onChange={onTaskChangedHandler}>
+            {showThemeListOptionsEl()}
+          </select>
 
           <label htmlFor="task">Задание</label>
-          <input type="text" name="task" id="" onChange={onTaskChangedHandler} />
+          <input type="text" name="task" onChange={onTaskChangedHandler} />
 
           <label htmlFor="answer">Ответ</label>
-          <input type="text" name="answer" id="" onChange={onTaskChangedHandler}/>
+          <input type="text" name="answer" onChange={onTaskChangedHandler} />
 
           <label htmlFor="hint">Подсказка</label>
-          <input type="text" name="hint" id="" onChange={onTaskChangedHandler}/>
-          <ButtonComponent name="Добавить новую задачу" handler={saveNewTaskHandler} />
+          <input type="text" name="hint" onChange={onTaskChangedHandler} />
+          <ButtonComponent
+            name="Добавить новую задачу"
+            handler={saveNewTaskHandler}
+          />
         </div>
         <div className={styles.themeContainer}>
           <label htmlFor="newTheme">Добавить новую тему</label>
-          <input
-            type="text"
-            name="newTheme"
-            id=""
-            onChange={onThemeChangedHandler}
-          />
+          <input type="text" name="newTheme" onChange={onThemeChangedHandler} />
           <ButtonComponent
             name="Сохранить тему"
             handler={saveNewThemeHandler}

@@ -2,20 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import getRandomColor from "../../../../../utils/random-color";
 import ButtonComponent from "../../../../../common/components/button/button.component";
 import styles from "./exercise-item.module.css";
+import { TaskInterface } from "../../../../../types";
 
-interface TaskItemInterface {
-  id: number;
-  themeName: string;
-  task: string;
-  answer: string;
-}
-
-const ExerciseItemComponent : React.FC<TaskItemInterface> = ({
-  id,
+const ExerciseItemComponent : React.FC<TaskInterface> = ({
   themeName,
   task,
   answer,
-}: TaskItemInterface) : JSX.Element => {
+}: TaskInterface) : JSX.Element => {
   const exerciseRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [isActive, setIsACtive] = useState(false);
@@ -47,7 +40,7 @@ const ExerciseItemComponent : React.FC<TaskItemInterface> = ({
     return (
       <div className={styles.title} onClick={() => setIsACtive(!isActive)}>
         <i className={`fas fa-thumbtack`} style={{ color: getRandomColor() }} />
-        <p>{themeName}</p>
+        <h3>{themeName}</h3>
         <i
           className={`fas fa-chevron-right ${
             isActive ? styles.turnArrow : null
@@ -61,7 +54,7 @@ const ExerciseItemComponent : React.FC<TaskItemInterface> = ({
     <div className={styles.container}>
       {showTaskTitle(themeName)}
       <div className={styles.exercise} ref={exerciseRef}>
-        <h1>{task}</h1>
+        <p>{task}</p>
         <input
           type="text"
           ref={inputRef}

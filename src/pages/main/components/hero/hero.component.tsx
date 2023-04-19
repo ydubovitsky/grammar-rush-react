@@ -4,13 +4,13 @@ import ButtonComponent from "../../../../common/components/button/button.compone
 import styles from "./hero.module.css";
 import image from "./images/ipad-hand.png";
 import MenuComponent from "./menu/menu.component";
-const Fade = require("react-reveal/Fade");
+import { Fade } from "react-awesome-reveal";
 
-const HeroComponent: React.FC = () => {
+const HeroComponent: React.FC = () : JSX.Element => {
   return (
     <div className={styles.container}>
       <div className={styles.leftColumn}>
-        <Fade bottom cascade>
+        <Fade>
           <div className={styles.content}>
             <AnimatedLogoAtomicComponent />
             <h1>Лучшее приложение для изучения грамматики</h1>
@@ -23,7 +23,7 @@ const HeroComponent: React.FC = () => {
         </div>
       </div>
       <div className={styles.rightColumn}>
-        <Fade right>
+        <Fade>
           <img src={image} alt="" />
         </Fade>
         <div className={styles.circleButton}>

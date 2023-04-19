@@ -1,11 +1,11 @@
-import styles from "./info.module.css";
+import { Fade } from "react-awesome-reveal";
 import UnitTitleComponent from "../../../../common/atomic-components/unit-title/unit-title.component";
-const Fade = require("react-reveal/Fade");
+import styles from "./info.module.css";
 
-const InfoComponent: React.FC = () => {
+const InfoComponent: React.FC = (): JSX.Element => {
   return (
     <div className={styles.container}>
-      <Fade bottom cascade>
+      <Fade>
         <div className={styles.feature}>
           <UnitTitleComponent text="Для кого это приложение?" />
           <p>
