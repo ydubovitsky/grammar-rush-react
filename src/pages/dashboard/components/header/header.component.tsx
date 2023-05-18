@@ -6,15 +6,20 @@ import {
   logout,
 } from "../../../../redux/features/auth/auth.slice";
 
-const HeaderComponent : React.FC = () : JSX.Element => {
+const HeaderComponent: React.FC = (): JSX.Element => {
   const userRoles = useSelector(userRolesSelector);
   const dispatch = useDispatch();
 
   const showAdminLinkEl = (): JSX.Element | null => {
     return userRoles?.includes("ADMIN") ? (
-      <Link to={"admin"} className={styles.navEl}>
-        Панель администратора
-      </Link>
+      <>
+        <Link to={"admin"} className={styles.navEl}>
+          Панель администратора
+        </Link>
+        <Link to={"trainer?themeId=1"} className={styles.navEl}>
+          Тренажер
+        </Link>
+      </>
     ) : null;
   };
 
@@ -28,8 +33,8 @@ const HeaderComponent : React.FC = () : JSX.Element => {
         <Link to={"info"} className={styles.navEl}>
           Описание
         </Link>
-        <Link to={"trainer?themeId=1"} className={styles.navEl}>
-          Тренажер
+        <Link to={"tenses"} className={styles.navEl}>
+          Времена
         </Link>
         {showAdminLinkEl()}
         <div onClick={() => dispatch(logout())} className={styles.navEl}>

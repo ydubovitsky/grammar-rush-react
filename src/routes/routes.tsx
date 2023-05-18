@@ -10,6 +10,7 @@ import AdminComponent from "../pages/dashboard/components/admin/admin.component"
 import FaqPage from "../pages/faq/faq.page";
 import PrivacyPolicyPage from "../pages/privacy-policy/privacy-policy.page";
 import TermOfUsePage from "../pages/term-of-use/term-of-use.page";
+import TimesComponent from "../pages/dashboard/components/times/times.compoent";
 
 const RoutesComponent = () => (
   <Routes>
@@ -21,8 +22,11 @@ const RoutesComponent = () => (
       <Route path="dashboard" element={<DashboardPage />}>
         <Route index element={<InfoComponent />} />
         <Route path="info" element={<InfoComponent />} />
-        <Route path="trainer" element={<TrainerComponent />} />
+        <Route path="tenses" element={<TimesComponent />}>
+          <Route path=":id" element={<TimesComponent />} />
+        </Route>
         <Route element={<RequireAuthRoute />}>
+          <Route path="trainer" element={<TrainerComponent />} />
           <Route path="admin" element={<AdminComponent />} />
         </Route>
         <Route path="*" element={<Navigate to="info" replace />} />
