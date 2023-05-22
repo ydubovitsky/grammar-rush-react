@@ -30,3 +30,6 @@ https://icons8.com/
 
 ### https://www.react-reveal.com/tutorials/
 https://stackoverflow.com/questions/68037185/could-not-find-a-declaration-file-for-module-react-reveal-fade
+
+### How to update webpack config for a react project created using create-react-app?
+https://stackoverflow.com/questions/63280109/how-to-update-webpack-config-for-a-react-project-created-using-create-react-app
