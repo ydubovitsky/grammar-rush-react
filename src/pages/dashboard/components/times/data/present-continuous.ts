@@ -1,4 +1,5 @@
 import { TenseInterface } from "../../../../../types";
+import template from './present-continuous.html';
 
 export const PRESENT_CONTINUOUS: TenseInterface = {
   name: "Present Continuous",
@@ -109,32 +110,5 @@ export const PRESENT_CONTINUOUS: TenseInterface = {
       { "reading now": "читаешь сейчас" },
     ],
   ],
-  html: `<p>
-  Present Continuous используется для описания действия, которое происходит прямо сейчас, в момент рассказа о нём. Также Present Continuous выражает одновременные действия.
-  </p>
-  </br>
-  <ul style="list-style: none">
-    <li><em><span>He’s playing the piano <span style="color:#EB4E36;">now</span>.</span> – Он сейчас играет на пианино.</em></li>
-    <li><em><span>I’m washing my clothes <span style="color:#EB4E36;">at the moment</span>.</span> – Я стираю свою одежду в данный момент.</em></li>
-    <li><em><span>They’re repairing the car right<span style="color:#EB4E36;"> now</span>.</span> – Они ремонтируют машину прямо сейчас.</em></li>
-    <li><em><span>I’m working and Ann is cooking <span style="color:#EB4E36;">now</span>.</span> – Я работаю сейчас, а Энн занимается готовкой.</em></li>
-</ul>
-</br>
-<p>Present Continuous используется для описания непостоянного, временного действия, т.е. такого действия, которое происходит не прямо сейчас, но в ближайшем временном промежутке – «around now» (примерно в это время).</p>
-</br>
-<ul style="list-style: none">
-	<li><em><span>She’s preparing for her next week exam.</spanss=> – Она готовится к экзамену, который будет на следующей неделе. (Она,&nbsp;возможно, не готовится к нему прямо сейчас, но будет готовится всё ближайшее к экзамену время)</em></li>
-	<li><em><span>My brother is looking for a job these days.</span> – Мой брат сейчас ищет работу. (Не факт, что он ищет её прямо сейчас, но на днях – в ближайшем настоящем)</em></li>
-	<li><em><span>I’m waiting for the parcel coming soon.</span> – Я жду посылку, которая скоро придет. (Я жду её в принципе, не прямо сейчас)</em></li>
-</ul>
-</br>
-      <p>С помощью<strong> Present Continuous</strong> описываются действия, которые запланированы на ближайшее будущее, особенно, если время и место проведения действия заранее оговорены.</p>
-</br>
-      <ul style="list-style: none">
-	<li><em><span class="js-speech">They’re moving to Kyiv next Monday.</span> – Они переезжают в Киев в следующий понедельник.</em></li>
-	<li><em><span class="js-speech">I’m going to the seaside this evening.</span> – Я еду на море этим вечером.</em></li>
-	<li><em><span class="js-speech">Kate and I are playing our new concert tonight.</span> – Сегодня вечером мы с Кейт играем наш новый концерт.</em></li>
-</ul>
-  </div>
-`,
+  html: `${template}`
 };

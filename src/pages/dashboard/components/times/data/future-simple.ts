@@ -1,4 +1,5 @@
 import { TenseInterface } from "../../../../../types";
+import template from "./future-simple.html";
 
 export const FUTURE_SIMPLE: TenseInterface = {
   name: "Future Simple",
@@ -29,8 +30,5 @@ export const FUTURE_SIMPLE: TenseInterface = {
     [{ "open the window tomorrow ": "откроем окно завтра" }],
     [{ "open the window tomorrow ": "откроешь окно завтра" }],
   ],
-  html: `<p>
-  Future Simple используется для описания единичных, повторяющихся или последовательных действий в будущем.
-  </p>
-  </br>`
+  html: `${template}`
 };

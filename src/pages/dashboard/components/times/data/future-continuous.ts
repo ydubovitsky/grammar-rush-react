@@ -1,4 +1,5 @@
 import { TenseInterface } from "../../../../../types";
+import template from './future-continuous.html';
 
 export const FUTURE_CONTINUOUS: TenseInterface = {
   name: "Future Continuous",
@@ -97,20 +98,5 @@ export const FUTURE_CONTINUOUS: TenseInterface = {
       },
     ],
   ],
-  html: `
-  <p><strong>Future Continuous</strong> используется для описания действий, которые будут происходить в конкретный, точно известный момент времени или некоторый промежуток времени в будущем.</p>
-</br>
-<ul style="list-style: none">
-<li><em><span>I will be waiting for you here <span style="color:#EB4E36;">at 9 a.m</span>. tomorrow.</span=> – Я буду ждать тебя здесь завтра в девять утра.</em></li>
-<li><em><span>Tom will be playing football <span style="color:#EB4E36;">all day</span> next Sunday.</span> – Том будет играть в футбол всё следующее воскресенье.</em></li>
-<li><em><span><span style="color:#EB4E36;">This time</span> next week I will be flying to Berlin.</span> – В это же время на следующей неделе я буду лететь в Берлин.</em></li>
-</ul>
-</br>
-<p>Точный момент времени в <strong>Future Continuous </strong>может уточняться другим, более кратковременным действием, которое выражено в <a href="present-simple">Present Simple</a>.</p>
-</br>
-<ul style="list-style: none">
-<li><em><span>I will be cooking dinner <span style="color:#EB4E36;">when she leaves</span>.</span> – Я буду готовить обед, когда она уйдет.</em></li>
-<li><em><span>He will be washing the car <span style="color:#EB4E36;">when the postman comes</span>.</span> – Он будет мыть машину, когда придет почтальон.</em></li>
-<li><em><span>They will be watching the game <span style="color:#EB4E36;">when the rain starts</span>.</span> – Они будут смотреть игру, когда начнется дождь.</em></li>
-</ul>`
+  html: `${template}`
 };

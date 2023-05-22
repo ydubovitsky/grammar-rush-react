@@ -1,4 +1,5 @@
 import { TenseInterface } from "../../../../../types";
+import template from './past-continuous.html';
 
 export const PAST_CONTINUOUS: TenseInterface = {
   name: "Past Continuous",
@@ -80,33 +81,5 @@ export const PAST_CONTINUOUS: TenseInterface = {
       { "reading all night long": "читал всю ночь" },
     ],
   ],
-  html: `
-  <div class="paragraph-content ll-text">
-      <p><strong>Past Continuous</strong>&nbsp;(<strong>Past Progressive</strong>) образуется с помощью вспомогательного глагола <strong>was</strong> или <strong>were</strong> и простого причастия настоящего времени (первая форма глагола с окончанием -<strong>ing</strong>). <strong>Was</strong> и <strong>were</strong> – это формы прошедшего времени вспомогательного глагола <a href="to-be">to be</a>.</p>
-
-<p>Выбор нужной формы зависит от лица подлежащего (главного члена предложения).<br>
-<strong>Was </strong>– используют, когда говорят о чем-то в единственном числе (<strong>I</strong>, <strong>he</strong>, <strong>she</strong>, <strong>it</strong>).<br>
-<strong>Were </strong>– когда говорят о множестве людей и вещей (<strong>we</strong>, <strong>they</strong>) или используют местоимение <strong>you </strong>(ты, вы, вежливое Вы).</p>
-</br>
-<ul style="list-style: none">
-	<li><em><span>I <span style="color:#EB4E36;">was </span>sing<span style="color:#EB4E36;">ing</span> a song.</span> – Я пел песню.</em></li>
-	<li><em><span>She <span style="color:#EB4E36;">was </span>drink<span style="color:#EB4E36;">ing</span> tea.</span> – Она пила чай.</em></li>
-	<li><em><span>They <span style="color:#EB4E36;">were </span>watch<span style="color:#EB4E36;">ing</span> the movie.</span> – Они смотрели кино.</em></li>
-</ul>
-</br>
-<p>Правила добавления окончания -ing</p>
-</br>
-      <ul style="list-style: none">
-				<li><em><span>to enter → enter<span style="color:#EB4E36;">ing</span></span></em></li>
-				<li><em><span>to l<span style="color:#EB4E36;">ie</span> → l<span style="color:#EB4E36;">y</span>ing</span></em></li>
-				<li><em><span>to tak<span style="color:#EB4E36;">e</span> → tak<span style="color:#EB4E36;">i</span>ng</span></em></li>
-				<li><em><span>to agr<span style="color:#EB4E36;">ee</span> → agr<span style="color:#EB4E36;">ee</span>ing</span></em></li>
-			</ul>
-      <ul style="list-style: none">
-				<li><em><span>to sa<span style="color:#EB4E36;">y</span> → sa<span style="color:#EB4E36;">y</span>ing</span></em></li>
-				<li><em><span>to rela<span style="color:#EB4E36;">x</span> → rela<span style="color:#EB4E36;">x</span>ing</span></em></li>
-				<li><em><span>to ru<span style="color:#EB4E36;">n</span> → ru<span style="color:#EB4E36;">nn</span>ing</span></em></li>
-				<li><em><span>to trave<span style="color:#EB4E36;">l</span> → trave<span style="color:#EB4E36;">ll</span>ing / trave<span style="color:#EB4E36;">l</span>ing</span></em></li>
-			</ul>
-  </div>`,
+  html: `${template}`
 };

@@ -1,4 +1,5 @@
 import { TenseInterface } from "../../../../../types";
+import template from './present-simple.html';
 
 export const PRESENT_SIMPLE : TenseInterface = {
   name: "Present Simple",
@@ -126,78 +127,5 @@ export const PRESENT_SIMPLE : TenseInterface = {
       { "cook every morning": "готовишь сейчас каждое утро" },
     ],
   ],
-  html: `
-  <div>
-      <p><strong>Present Simple</strong> используется для описания чего-то, не привязанного к моменту речи, того, что актуально в общем.</p>
-      </br>
-      <ul style="list-style: none">
-	<li><em><span>He likes to be in the focus of attention.</span> – Ему нравится быть в центре внимания.</em></li>
-	<li><em><span>Do you prefer red wine or white wine?</span> – Вы предпочитаете красное или белое вино?</em></li>
-	<li><em><span>What do you think about online dating?</span> – Что вы думаете о знакомствах в интернете?</em></li>
-</ul>
-  </div>
-  </br>
-  <div>
-      <p><strong>Present Simple </strong>используется для описания общеизвестных истин, научных фактов, явлений природы, того, что по мнению говорящего всегда было, есть и будет таким.</p>
-  </br>
-      <ul style="list-style: none">
-	<li><em><span>The Earth revolves around the Sun.</span> – Земля вращается вокруг Солнца.</em></li>
-	<li><em><span>Snow consists of water.</span> – Снег состоит из воды.</em></li>
-	<li><em><span>At what temperature does water freeze?</span> – При какой температуре замерзает вода?</em></li>
-</ul>
-</br>
-  </div>
-  <div class="paragraph-content ll-text">
-      <p><strong>Present Simple</strong> используется для описания регулярно повторяющихся событий.</p>
-      </br>
-      <ul style="list-style: none">
-	<li><em><span>I wake up <span style="color:#EB4E36;">at 6:15 a.m</span>.</span> – Я просыпаюсь в 6:15 утра (регулярно, каждый день).</em></li>
-	<li><em><span>Не runs 10 kilometers <span style="color:#EB4E36;">every morning</span>.</span> – Он пробегает 10 км каждое утро.</em></li>
-	<li><em><span>When does she <span style="color:#EB4E36;">usually </span>come home?</span> – Когда она обычно приходит домой?</em></li>
-</ul>
-  </div>
-  </br>
-  <div class="paragraph-content ll-text">
-      <p><strong>Present Simple </strong>может использоваться с выражениями времени, которые описывают как часто происходит или не происходит действие.</p>
-      </br>
-<ul>
-	<li><em><span>always</span> – всегда</em></li>
-	<li><em><span>often</span> – часто</em></li>
-	<li><em><span>usually</span> – обычно</em></li>
-	<li><em><span>regularly</span> – постоянно</em></li>
-</ul>
-</br>
-<ul>
-	<li><em><span>from time to time</span> – время от времени</em></li>
-	<li><em><span>sometimes</span> – иногда</em></li>
-	<li><em><span>seldom</span> – изредка</em></li>
-	<li><em><span>rarely</span> – редко</em></li>
-	<li><em><span>never</span> – никогда</em></li>
-</ul>
-</br>
-<ul>
-	<li><em><span>every day</span> – каждый день</em></li>
-	<li><em><span>every week</span> – каждую неделю</em></li>
-	<li><em><span>every month</span> – каждый месяц</em></li>
-	<li><em><span>every year</span> – каждый год</em></li>
-</ul>
-</br>
-<ul>
-	<li><em><span>at the weekend</span> – на выходных</em></li>
-	<li><em><span>at weekends</span> – по выходным</em></li>
-	<li><em><span>at 7 o'clock</span> – в 7 часов (когда речь о расписании)</em></li>
-</ul>
-</br>
-<ul>
-	<li><em><span>twice a week</span> – два раза в неделю </em></li>
-	<li><em><span>three times a week</span> – три раза в неделю</em></li>
-	<li><em><span>four times a month</span> – четыре раза в месяц</em></li>
-</ul>
-</br>
-<ul>
-	<li><em><span>on Mondays</span> – по понедельникам</em></li>
-	<li><em><span>on Sundays</span> – по воскресеньям</em></li>
-</ul>
-  </div>
-  `
+  html: `${template}`
 };
