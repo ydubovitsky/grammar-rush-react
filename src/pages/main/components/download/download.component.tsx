@@ -7,7 +7,10 @@ const DownloadComponent = () => {
   return (
     <div className={styles.container}>
       <Fade>
-        <SectionTitleComponent name="Скачать приложение сейчас" />
+        <SectionTitleComponent
+          name="Скачать приложение сейчас"
+          description="Установите наше приложение и получите незаменимого помощника, который всегда под рукой"
+        />
         <div className={styles.columnContainer}>
           <div className={styles.firstColumn}>
             <div className={styles.block}>
@@ -39,7 +42,8 @@ const DownloadComponent = () => {
             <div className={styles.block}>
               <h2>Абсолютно бесплатно</h2>
               <p>
-                Мы считаем, что все знания должны быть абсолютно бесплатными, поэтому используя наше приложение, вы ни за что не платите
+                Мы считаем, что все знания должны быть абсолютно бесплатными,
+                поэтому используя наше приложение, вы ни за что не платите
               </p>
             </div>
           </div>

@@ -8,7 +8,10 @@ const ExerciseListComponent: React.FC = (): JSX.Element => {
   return (
     <div className={styles.container}>
       <Fade>
-        <SectionTitleComponent name="Бесконечное количесвто заданий" />
+        <SectionTitleComponent
+          name="Бесконечное количесвто заданий"
+          description="Отточите свои знания до полного автоматизма с нашим потрясающим тренажером"
+        />
         <TrainerComponent tense={PRESENT_CONTINUOUS} />
       </Fade>
     </div>
