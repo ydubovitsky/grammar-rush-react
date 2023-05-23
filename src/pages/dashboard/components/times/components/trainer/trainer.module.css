@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sentence {
+  padding: 5%;
+  background-color: rgb(197, 240, 199);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.answerContainer {
+  padding: 2% 5%;
+  background-color: rgb(138, 186, 248);
+  transition: 0.3s ease;
+}

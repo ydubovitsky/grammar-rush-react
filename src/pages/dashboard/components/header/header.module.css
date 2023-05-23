@@ -20,10 +20,10 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  text-align: center;
   justify-content: space-around;
   justify-items: center;
   width: 100%;
+  text-align: center;
 }
 
 .navEl {

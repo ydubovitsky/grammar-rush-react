@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: start;
+  padding: 5px;
+}
+
+.units {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.answerBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  height: 50px;
+  padding: 10px 20px;
+  border: 1px solid var(--backgroundSecondary);
+  border-radius: 10px;
+  transition: 0.3s ease-in;
+}
+
+.answerBox:hover {
+  color: white;
+  background-color: var(--backgroundThird);
+  border-color: var(--backgroundThird);
+}

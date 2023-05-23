@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 50px;
+  font-size: 1.1rem;
+  text-align: start;
+  background-color: #eef4fade;
+  border-top: 1px solid rgb(230, 230, 230);
+  border-bottom: 1px solid rgb(230, 230, 230);
+  border-left: 1px solid rgb(212, 212, 212);
+}
+
+.themes {
+  position: sticky;
+  top: 70px;
+  padding: 10% 15%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px silver;
+}
+
+.themes a {
+  color: black;
+  text-decoration: none;
+}
+
+.container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.container ul li {
+  padding: 10px 35px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 1px rgb(221, 221, 221);
+  transition: 0.3s ease;
+}
+
+.container ul li:hover {
+  color: white;
+  background-color: var(--backgroundThird);
+  border-color: var(--backgroundThird);
+  transform: scale(0.98);
+}

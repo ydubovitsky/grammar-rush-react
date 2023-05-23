@@ -1,5 +1,5 @@
 import { TenseInterface } from "../../../../../types";
-import template from './past-perfect.html';
+import template from "./past-perfect.html";
 
 export const PAST_PERFECT: TenseInterface = {
   name: "Past Perfect",
@@ -13,7 +13,28 @@ export const PAST_PERFECT: TenseInterface = {
   ],
   pronounts: [
     [{ I: "Я" }, { You: "Ты" }],
-    [{ He: "Он" }],
+    [
+      { He: "Он" },
+      { Tom: "Том" },
+      { James: "Джеймс" },
+      { "Samwise Gamgee": "Сэмуайз Гэмджи" },
+      { "Donnie Darko": "Донни Дарко" },
+      { "Rocky Balboa": "Рокки Бальбоа" },
+      { Groot: "Грут" },
+      { "Peter Venkman": "Питер Венкман" },
+      { "Johnny Depp": "Джонни Депп" },
+      { "Leonardo DiCaprio": "Леонардо Ди Каприо" },
+      { "Will Smith": "Уилл Смит" },
+      { "Jim carrey": "Джим Керри" },
+      { "Brad Pitt": "Брэд Питт" },
+      { "Keanu Reeves": "Киану Ривз" },
+      { "Tom Hardy": "Том Харди" },
+      { "Tom Hanks": "Том Хэнкс" },
+      { "Matthew David McConaughey": "Мэттью Дэвид МакКонахи" },
+      { "Anthony Hopkins": "Энтони Хопкинс" },
+      { "Tom Cruise": "Том Круз" },
+      { "Walter Bruce Willis": "Уо́лтер Брюс Уи́ллис" },
+    ],
     [{ They: "Они" }, { We: "Мы" }],
   ],
   auxiliaries: [[{ had: "" }], [{ "had not": "не" }]],
