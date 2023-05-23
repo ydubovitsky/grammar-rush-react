@@ -1,20 +1,6 @@
 .container {
   display: grid;
-  padding: 5%;
   gap: 20px;
+  padding: 5%;
   background-color: var(--backgroundPrimary);
-}
-
-.tasksContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.themes {
-  box-shadow: 5px 5px 5px 5px rgba(235, 235, 235, 0.767);
-  width: 100%;
 }
