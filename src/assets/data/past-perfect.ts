@@ -1,4 +1,4 @@
-import { TenseInterface } from "../../../../../types";
+import { TenseInterface } from "../../types";
 import template from "./past-perfect.html";
 
 export const PAST_PERFECT: TenseInterface = {
@@ -39,7 +39,17 @@ export const PAST_PERFECT: TenseInterface = {
   ],
   auxiliaries: [[{ had: "" }], [{ "had not": "не" }]],
   verbs: [
-    [{ "already worked by six o'clock": "поработал к шести часам" }],
+    [
+      { "already worked by six o'clock": "поработал к шести часам" },
+      {
+        "finished work when he came here":
+          "закончил работу, когда он сюда пришел",
+      },
+      {
+        "lived in Paris for 12 years before we moved to America":
+          "прожил в Париже 12 лет до того как мы переехали в Америку",
+      },
+    ],
     [{ "already worked by six o'clock": "поработали к шести часам" }],
   ],
   html: `${template}`,

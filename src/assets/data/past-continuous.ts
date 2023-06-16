@@ -1,14 +1,14 @@
-import { TenseInterface } from "../../../../../types";
+import { TenseInterface } from "../../types";
 import template from './past-continuous.html';
 
 export const PAST_CONTINUOUS: TenseInterface = {
   name: "Past Continuous",
   strategies:  [
     [0, 0, 0],
-    [1, 0, 1],
-    [2, 1, 2],
-    [3, 1, 2],
-    [4, 1, 4],
+    [1, 0, 0],
+    [2, 1, 1],
+    [3, 1, 1],
+    [4, 1, 0],
   ],
   pronounts: [
     [
@@ -66,19 +66,26 @@ export const PAST_CONTINUOUS: TenseInterface = {
       { "doing her makeup while she was talking over the telephone": "делал макияж во время разговора по телефону" },
       { "drinking a cup of coffee while they were sitting at that restaurant": "пил кофе, когда сидели в том ресторане" },
       { "hoping to meet her at the bookstore but she didn’t come": "надеялся встретить её в книжном магазине, но она не пришла" },
-      { "thinking of cooking a pie but we wanted some pizza.": "думал приготовить пирог, но мы хотели пиццы." },
-    ],
-    [
-      { "working all night long": "работал всю ночь" },
-      { "reading all night long": "читал всю ночь" },
+      { "thinking of cooking a pie but we wanted some pizza": "думал приготовить пирог, но мы хотели пиццы." },
+      { "playing chess when you called": "играл в шахматы, когда ты позвонил" },
+      { "reading interesting story the whole night": "читал интересную историю всю ночь" },
+      { "reading interesting article the whole night": "читал интересную статью всю ночь" },
+      { "reading exciting book the whole night": "читал захватывающую книгу всю ночь" },
+      { "reading exciting paper the whole night": "читал захватывающую газету всю ночь" },
+      { "running through a forest the whole day": "бегал через лес весь день" },
+      { "climbing a mountain the whole day": "карабкался по горе весь день" },
+      { "observing this couple the whole evening": "наблюдал за этой парочкой весь вечер" },
+      { "learning Chinese the whole evening": "учил китайский весь вечер" },
+      { "learning Romanian the whole evening": "учил румынский весь вечер" },
+      { "learning Russian the whole evening": "учил русский весь вечер" },
+      { "improving speach the whole morning": "улучшал речь все утро" },
+      { "improving diction the whole morning": "улучшал дикцию все утро" },
+      { "improving this application the whole morning": "улучшал это приложение все утро" },
+      { "testing this web application the whole morning": "тестировал это веб приложение все утро" },
     ],
     [
       { "working all night long": "работали всю ночь" },
       { "reading all night long": "читали всю ночь" },
-    ],
-    [
-      { "working all night long": "работал всю ночь" },
-      { "reading all night long": "читал всю ночь" },
     ],
   ],
   html: `${template}`

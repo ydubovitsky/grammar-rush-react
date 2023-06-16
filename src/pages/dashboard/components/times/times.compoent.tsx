@@ -14,7 +14,7 @@ import {
   PRESENT_CONTINUOUS,
   PRESENT_PERFECT,
   PRESENT_SIMPLE,
-} from "./data";
+} from "../../../../assets/data";
 import styles from "./times.module.css";
 
 const TENSES_LIST = [

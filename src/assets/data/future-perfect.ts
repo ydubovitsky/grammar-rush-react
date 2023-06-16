@@ -1,4 +1,4 @@
-import { TenseInterface } from "../../../../../types";
+import { TenseInterface } from "../../types";
 import template from "./future-perfect.html";
 
 export const FUTURE_PERFECT: TenseInterface = {
@@ -47,7 +47,25 @@ export const FUTURE_PERFECT: TenseInterface = {
   verbs: [
     [
       { "opened the window by 8 p.m. ": "открою окно к 8 часам" },
+      { "bought a ticket before the bus arrives": "куплю билет до того как автобус прибудет" },
+      { "covered 30 km by sunset": "пройду 30км к закату" },
+      { "received your next letter before Christmas": "получу твое следующее письмо до Рождества" },
+      { "spent much efforts before you can run a marathon": "потрачу много усилий прежде чем смогу пробежать марафон" },
       { "opened the bottle by 6 p.m. ": "открою бутылку к 6 часам вечера" },
+      { "come by seven p.m.": "приду к 7 вечера" },
+      { "cooked breakfast befere you come": "приготовлю завтрак до того как ты придешь" },
+      { "passed an exam by spring": "сдам экзамен к весне" },
+      { "bought a new car by next monday": "куплю новую машину к следующему понедельнику" },
+      { "learned this theory before you come": "выучу эту теорию до того как ты придешь" },
+      { "read this article by tuesday": "прочту эту статью ко вторнику" },
+      { "rung to you before he sends a letter": "позвоню тебе до того как он отправит письмо" },
+      { "seen her by sunset": "увижу ее к закату" },
+      { "sold all this items by Sunday": "продам все эти вещи к воскресенью" },
+      { "shaved by morning": "побреюсь к утру" },
+      { "shot this bear by the next season": "подстрелю этого медведя к следующему сезону" },
+      { "sung this song by the next party": "спою эту песню к следующей вечеринке" },
+      { "slept before an exam starts": "посплю до того как экзамен начнется" },
+      { "spent all money before you can say stop": "потрачу все деньги до того как ты успеешь сказать стоп" },
     ],
     [
       { "opened the window by 8 p.m. ": "откроет окно к 8 часам" },

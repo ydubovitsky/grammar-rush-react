@@ -1,4 +1,4 @@
-import { TenseInterface } from "../../../../../types";
+import { TenseInterface } from "../../types";
 import template from './present-simple.html';
 
 export const PRESENT_SIMPLE : TenseInterface = {
@@ -105,7 +105,7 @@ export const PRESENT_SIMPLE : TenseInterface = {
       { "cook every morning": "готовят сейчас каждое утро" },
     ],
     [
-      { "work every day": "работам каждый день" },
+      { "work every day": "работаем каждый день" },
       { "work rarely": "работаем редко" },
       { "read every day": "читаем каждый день" },
       { "do homework often": "делаем домашнюю работу часто" },

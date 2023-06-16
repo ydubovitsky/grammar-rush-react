@@ -1,4 +1,4 @@
-import { TenseInterface } from "../../../../../types";
+import { TenseInterface } from "../../types";
 import template from './present-continuous.html';
 
 export const PRESENT_CONTINUOUS: TenseInterface = {

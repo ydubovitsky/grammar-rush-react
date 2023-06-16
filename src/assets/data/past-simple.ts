@@ -1,4 +1,4 @@
-import { TenseInterface } from "../../../../../types";
+import { TenseInterface } from "../../types";
 import template from './past-simple.html';
 
 export const PAST_SIMPLE: TenseInterface = {

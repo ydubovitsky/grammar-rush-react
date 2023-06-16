@@ -1,4 +1,4 @@
-import { TenseInterface } from "../../../../../types";
+import { TenseInterface } from "../../types";
 import template from "./future-simple.html";
 
 export const FUTURE_SIMPLE: TenseInterface = {
@@ -45,7 +45,25 @@ export const FUTURE_SIMPLE: TenseInterface = {
   ],
   auxiliaries: [[{ will: "" }], [{ "will not": "не" }]],
   verbs: [
-    [{ "open the window tomorrow ": "открою окно завтра" }],
+    [
+      { "open the window tomorrow ": "открою окно завтра" },
+      { "buy some food": "куплю еды" },
+      { "pass an exam": "сдам экзамен" },
+      { "marry next year": "обвенчаюсь в следующем году" },
+      { "steal this earring in five years": "украду эту сережку через 5 лет" },
+      { "swim in the ocean tommorrow": "плавать в океане завтра" },
+      { "think about you tommorrow": "думать о тебе завтра" },
+      { "tell with Jam tommorrow": "говорить с Джемом завтра" },
+      { "write the autobiography in ten years": "писать автобиографию через 10 лет" },
+      { "build a house in ten years": "строить дом через 10 лет" },
+      { "blow in a horn tomorrow": "дуть в рог завтра" },
+      { "drink orange juice tomorrow": "пить апельсиновый сок завтра" },
+      { "drink milk tomorrow": "пить молоко завтра" },
+      { "bite you tomorrow": "кусать тебя завтра" },
+      { "choose a next trip next monday": "выбирать следующее путешествие в следующий понедельник" },
+      { "buy a ticket next Thursday": "покупать билет в следующий Четверг" },
+      { "cook a dinner next Wednesday": "готовить ужин в следующую среду" },
+    ],
     [{ "open the window tomorrow ": "откроет окно завтра" }],
     [{ "open the window tomorrow ": "откроют окно завтра" }],
     [{ "open the window tomorrow ": "откроем окно завтра" }],

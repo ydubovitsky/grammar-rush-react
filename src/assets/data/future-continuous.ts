@@ -1,4 +1,4 @@
-import { TenseInterface } from "../../../../../types";
+import { TenseInterface } from "../../types";
 import template from "./future-continuous.html";
 
 export const FUTURE_CONTINUOUS: TenseInterface = {
@@ -11,10 +11,7 @@ export const FUTURE_CONTINUOUS: TenseInterface = {
     [4, 4, 0],
   ],
   pronounts: [
-    [
-      { I: "Я" },
-      { "I have finished my business, I": "Я закончил свои дела, Я" },
-    ],
+    [{ I: "Я" }],
     [
       { He: "Он" },
       { She: "Она" },
@@ -80,10 +77,30 @@ export const FUTURE_CONTINUOUS: TenseInterface = {
   verbs: [
     [
       { "dancing at 5 o'clock": "танцевать в 5 часов" },
+      { "breaking at 9 o'clock": "разрушать в 9 часов" },
+      { "sending an email at 2 o'clock": "посылать письмо в 2 часа" },
+      { "dreaming about a food at 15 o'clock": "мечтать о еде в 15 часов" },
+      {
+        "traveling tomorrow this time": "путешествовать завтра в это же время",
+      },
+      {
+        "flying to New York tomorrow this time":
+          "лететь в Нью-Йорк завтра в это же время",
+      },
+      {
+        "packing presents tomorrow morning": "упаковывать подарки завтра утром",
+      },
+      { "expecting you": "вас ждать" },
       { "reading this time tomorrow ": "читать в это время завтра" },
+      { "sitting this time tomorrow ": "сидеть в это время завтра" },
+      { "sleeping this time tomorrow ": "спать в это время завтра" },
       {
         "taking a bath the same time next week":
           "принимать душ в то же самое время на следующей неделе",
+      },
+      {
+        "packing presents the same time next week":
+          "упаковывать подарки в то же самое время на следующей неделе",
       },
       {
         "waiting for you here at 9 a.m. tomorrow":
@@ -93,10 +110,19 @@ export const FUTURE_CONTINUOUS: TenseInterface = {
         "playing football all day next Sunday":
           "играть в футбол весь день в следующее воскресенье",
       },
+      {
+        "playing piano all day next Monday":
+          "играть на пианино весь день в следующий понедельник",
+      },
+      {
+        "playing volleyball all day next Sunday":
+          "играть в волейбол весь день в следующее воскресенье",
+      },
       { "cooking dinner when she leaves": "готовить обед, когда она уйдет" },
+      { "cooking breakfast when your cousin leaves": "готовить завтрак, когда двоюродный брат уйдет" },
       {
         "washing the car when the postman comes":
-          " мыть машину, когда придет почтальон",
+          "мыть машину, когда придет почтальон",
       },
       {
         "washing the glass when the worker comes":
@@ -111,6 +137,10 @@ export const FUTURE_CONTINUOUS: TenseInterface = {
           "делать коктейли, а Анна будет встречать гостей",
       },
       {
+        "cleaning the house and Matthey will be cooking sandwiches":
+          "убирать дом, а Мэттью будет готовить сэндвичи",
+      },
+      {
         "making dinner and Jam will be meeting guests":
           "делать ужин, а Джем будет встречать гостей",
       },
@@ -121,6 +151,10 @@ export const FUTURE_CONTINUOUS: TenseInterface = {
       {
         "sitting, watching movie and eating a pie":
           "сидеть, смотреть фильм и есть пирог",
+      },
+      {
+        "dancing, listening music and eating a pizza":
+          "танцевать, слушать музыку и есть пиццу",
       },
       {
         "meeting Jake’s parents this evening":

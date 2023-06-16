@@ -1,4 +1,4 @@
-import { TenseInterface } from "../../../../../types";
+import { TenseInterface } from "../../types";
 import template from "./present-perfect.html";
 
 export const PRESENT_PERFECT: TenseInterface = {
