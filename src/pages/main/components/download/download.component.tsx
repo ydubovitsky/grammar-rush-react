@@ -1,7 +1,8 @@
 import SectionTitleComponent from "../../../../common/atomic-components/section-title/section-title.component";
 import styles from "./download.module.css";
 import image from "./images/ipad-hand.png";
-import { Fade, Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
+import Spline from "@splinetool/react-spline";
 
 const DownloadComponent = () => {
   return (
@@ -30,7 +31,7 @@ const DownloadComponent = () => {
             </div>
           </div>
           <div className={styles.secondColumn}>
-            <img src={image} alt="" />
+            <Spline scene="https://prod.spline.design/DLgBQnJu9JmWhUa5/scene.splinecode" />
           </div>
           <div className={styles.thirdColumn}>
             <div className={styles.block}>

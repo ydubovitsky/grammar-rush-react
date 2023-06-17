@@ -42,10 +42,6 @@
   background-color: var(--backgroundSecondary);
 }
 
-.rightColumn img {
-  width: 50%;
-}
-
 .circleButton {
   position: absolute;
   width: 80px;
