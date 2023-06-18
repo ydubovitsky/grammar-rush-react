@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import styles from './sign-in.module.css';
 import { useNavigate } from 'react-router-dom';
@@ -18,9 +18,11 @@ const SignInComponent = () => {
     setIsLogin(!isLogin);
   }
 
-  if (status === 'succeeded' || status === 'created') {
-    navigate("/");
-  }
+  useEffect(() => {
+    if (status === 'succeeded' || status === 'created') {
+      navigate("/");
+    }
+  }, [])
 
   const showLoginOrRegistrationForm = () => {
     return isLogin ? <LoginForm /> : <RegistrationForm />

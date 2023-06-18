@@ -84,6 +84,6 @@ export const userEntitySelector = (state: RootState) => state.auth.userEntity;
 export const authStatusSelector = (state: RootState): FETCH_STATUS =>
   state.auth.status;
 export const userRolesSelector = (state: RootState) =>
-  state.auth.userEntity.roles;
+  state.auth.userEntity?.roles;
 
 export default authSlice.reducer;

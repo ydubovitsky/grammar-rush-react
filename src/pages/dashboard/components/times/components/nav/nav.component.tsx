@@ -12,8 +12,8 @@ const NavComponent: React.FC<NavComponentProps> = ({tensesList, setTense}): JSX.
     <div className={styles.container}>
       <div className={styles.themes}>
         <ul>
-          {tensesList.map((tense) => (
-            <Link to={tense.name}>
+          {tensesList.map((tense, idx) => (
+            <Link key={idx} to={tense.name}>
               <li onClick={() => setTense(tense)}>{tense.name}</li>
             </Link>
           ))}

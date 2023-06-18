@@ -46,7 +46,7 @@ const MenuComponent: React.FC = () => {
       <div ref={menuElementRef} className={styles.menu}>
         {showMenuElements(status)}
         <Link to={"dashboard"} className={styles.menuBtn}>
-          Панель управления
+          Войти без регистрации
         </Link>
         <p onClick={menuToggleHandler} className={styles.menuBtn}>
           Закрыть

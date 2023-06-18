@@ -49,8 +49,9 @@ const AnswerUnitsComponent: React.FC<AnswerUnitsComponentProps> = ({
   return (
     <div className={styles.container}>
       <div className={styles.units}>
-        {getPosibleAnswerUnitsArray(sentence, tense).map((element) => (
+        {getPosibleAnswerUnitsArray(sentence, tense).map((element, idx) => (
           <div
+            key={idx}
             className={styles.answerBox}
             onClick={() => setUserAnswer((prev) => prev + " " + element)}
           >
