@@ -4,7 +4,7 @@ import ButtonComponent from "../../../../common/components/button/button.compone
 import styles from "./hero.module.css";
 import MenuComponent from "./menu/menu.component";
 import { Fade } from "react-awesome-reveal";
-import Spline from "@splinetool/react-spline";
+// import Spline from "@splinetool/react-spline";
 
 const HeroComponent: React.FC = (): JSX.Element => {
   return (
@@ -23,7 +23,7 @@ const HeroComponent: React.FC = (): JSX.Element => {
         </div>
       </div>
       <div className={styles.rightColumn}>
-        <Spline scene="https://prod.spline.design/2Q-b7QNJCNXgVYQj/scene.splinecode" />
+        {/* <Spline scene="https://prod.spline.design/2Q-b7QNJCNXgVYQj/scene.splinecode" /> */}
         <div className={styles.circleButton}>
           <i className="fas fa-chevron-left"></i>
         </div>

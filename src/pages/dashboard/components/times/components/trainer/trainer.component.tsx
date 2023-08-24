@@ -1,107 +1,52 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import ButtonComponent from "../../../../../../common/components/button/button.component";
+import { nextRandomSentence } from "../../../../../../redux/features/tense/tense.slice";
+import { SentenceInterface, TenseInterface } from "../../../../../../types";
 import AnswerUnitsComponent from "./components/answer-units/answer-units.component";
 import UserProgressComponent from "./components/user-progress/user-progress.component";
 import styles from "./trainer.module.css";
-import { SentenceInterface, TenseInterface } from "../../../../../../types";
-import { default as rndRangeNum } from "../../../../../../utils/randomNumberInRange";
-import ProgressBlockComponent from "./components/progress-block/progress-block.component";
 
 type TrainerComponentProps = {
-  tense: TenseInterface | undefined;
+  tense: TenseInterface;
 };
 
 const TrainerComponent: React.FC<TrainerComponentProps> = ({
-  tense,
+  tense
 }): JSX.Element => {
-  // States
-  const [sentence, setSentence] = useState<SentenceInterface>({
-    en: "",
-    ru: "",
-  });
+
+  const [sentence, setSentence] = useState<SentenceInterface>({ru: "", en: ""});
   const [userAnswer, setUserAnswer] = useState<string>("");
-  const [progressElementList, setProgressElementList] = useState<JSX.Element[]>(
-    []
-  );
+  const [progressElementList, setProgressElementList] = useState<boolean[]>([]);
   const [isAnswerVisible, setIsAnswerVisible] = useState<boolean>(false);
 
-  // useEffect
   useEffect(() => {
-    tense !== undefined ? getNextSentence(tense) : (() => undefined)() //!TODO fixme
-  }, []);
+    //! I use this function not like a selector here
+    setSentence(nextRandomSentence(tense))
+  }, [tense])
 
-  // Methods
-  const getOnlyKey = (object: object) => Object.keys(object)[0]; //! Util method
-
-  const getOnlyValue = (object: object) => Object.values(object)[0]; //! Util method
-
-  const buildSentence = (...words: Array<string>) : string => {
-    return words.reduce((prev, cur) => prev + " " + cur, " ");
-  };
-
-  const clearUserAnswer = () :void => {
+  const clearUserAnswer = (): void => {
     setUserAnswer("");
   };
 
-  const showAnswer = () : void => {
+  const showAnswer = (): void => {
     setIsAnswerVisible(true);
     setTimeout(() => {
       setIsAnswerVisible(false);
     }, 5000);
   };
 
-  const checkUserAnswer = (userAnswer: string, sentence: SentenceInterface) : void => {
+  const checkUserAnswer = (
+    userAnswer: string,
+    sentence: SentenceInterface
+  ): void => {
     userAnswer.replaceAll(" ", "") === sentence.ru.replaceAll(" ", "")
-      ? setProgressElementList([
-          ...progressElementList,
-          <ProgressBlockComponent
-            key={progressElementList.length}
-            backgroundColor="green"
-          />,
-        ])
-      : setProgressElementList([
-          ...progressElementList,
-          <ProgressBlockComponent
-            key={progressElementList.length}
-            backgroundColor="red"
-          />,
-        ]);
-    //!TODO Улучшить эту логику
-    if (progressElementList.length > 50) {
-      setProgressElementList([]);
-    }
+      ? setProgressElementList([...progressElementList, true])
+      : setProgressElementList([...progressElementList, false]);
   };
 
-  // Show next sentence
-  const getNextSentence = (tense: TenseInterface): void => {
-    const { strategies, pronounts, auxiliaries, verbs } = tense;
-
-    const strategy = strategies[rndRangeNum(0, strategies.length)];
-
-    const pronountsList = pronounts[strategy[0]];
-    const pronoun = pronountsList[rndRangeNum(0, pronountsList.length)];
-
-    const auxiliariesList = auxiliaries[strategy[1]];
-    const auxiliary = auxiliariesList[rndRangeNum(0, auxiliariesList.length)];
-
-    const verbsList = verbs[strategy[2]];
-    const verb = verbsList[rndRangeNum(0, verbsList.length)];
-
-    // Очищаем пользовательский ввод
+  const showNextSentence = () => {
     clearUserAnswer();
-
-    setSentence({
-      en: buildSentence(
-        getOnlyKey(pronoun),
-        getOnlyKey(auxiliary),
-        getOnlyKey(verb)
-      ),
-      ru: buildSentence(
-        getOnlyValue(pronoun),
-        getOnlyValue(auxiliary),
-        getOnlyValue(verb)
-      ),
-    });
+    setSentence(nextRandomSentence(tense))
   };
 
   return (
@@ -109,7 +54,7 @@ const TrainerComponent: React.FC<TrainerComponentProps> = ({
       <h1>Интерактивный тренажер</h1>
       <p>Переведите на русский данное выражение:</p>
       <div className={styles.sentence}>
-        <h1>{sentence.en}</h1>
+        <h1>{sentence?.en}</h1>
       </div>
       <AnswerUnitsComponent
         sentence={sentence}
@@ -121,10 +66,7 @@ const TrainerComponent: React.FC<TrainerComponentProps> = ({
       </div>
       <UserProgressComponent progressElementList={progressElementList} />
       <div className={styles.buttons}>
-        <ButtonComponent
-          name="Следующее задание"
-          handler={() => getNextSentence(tense!)}
-        />
+        <ButtonComponent name="Следующее задание" handler={showNextSentence} />
         <ButtonComponent
           name="Проверить"
           handler={() => checkUserAnswer(userAnswer, sentence)}

@@ -1,25 +1,23 @@
-import styles from "./header.module.css";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 import {
-  userRolesSelector,
   logout,
+  userRolesSelector,
 } from "../../../../redux/features/auth/auth.slice";
+import { useAppSelector } from "../../../../redux/hooks/hooks";
+import { randomTenseNameSelector } from "../../../../redux/features/tense/tense.slice";
+import styles from "./header.module.css";
 
 const HeaderComponent: React.FC = (): JSX.Element => {
-  const userRoles = useSelector(userRolesSelector);
+  const userRoles: string[] = useAppSelector(userRolesSelector);
+  const randomTenseName: string = useAppSelector(randomTenseNameSelector);
   const dispatch = useDispatch();
 
   const showAdminLinkEl = (): JSX.Element | null => {
     return userRoles?.includes("ADMIN") ? (
-      <>
-        <Link to={"admin"} className={styles.navEl}>
-          Панель администратора
-        </Link>
-        <Link to={"trainer?themeId=1"} className={styles.navEl}>
-          Тренажер
-        </Link>
-      </>
+      <Link to={"admin"} className={styles.navEl}>
+        Панель администратора
+      </Link>
     ) : null;
   };
 
@@ -33,7 +31,7 @@ const HeaderComponent: React.FC = (): JSX.Element => {
         <Link to={"info"} className={styles.navEl}>
           Описание
         </Link>
-        <Link to={"tenses"} className={styles.navEl}>
+        <Link to={`tenses/${randomTenseName}`} className={styles.navEl}>
           Времена
         </Link>
         {showAdminLinkEl()}

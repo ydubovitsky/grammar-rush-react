@@ -45,7 +45,7 @@ const authSlice = createSlice({
   reducers: {
     logout() {
       return initialState;
-    }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -83,7 +83,7 @@ export const authSelector = (state: RootState) => state.auth;
 export const userEntitySelector = (state: RootState) => state.auth.userEntity;
 export const authStatusSelector = (state: RootState): FETCH_STATUS =>
   state.auth.status;
-export const userRolesSelector = (state: RootState) =>
+export const userRolesSelector = (state: RootState): string[] =>
   state.auth.userEntity?.roles;
 
 export default authSlice.reducer;

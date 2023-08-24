@@ -1,20 +1,20 @@
-import { TenseInterface } from '../../../../../../types';
+import { useAppSelector } from '../../../../../../redux/hooks/hooks';
+import { tenseEntitiesSelector } from '../../../../../../redux/features/tense/tense.slice';
 import styles from './nav.module.css';
 import { Link } from 'react-router-dom';
 
-type NavComponentProps = {
-  tensesList: TenseInterface[]
-  setTense: React.Dispatch<React.SetStateAction<TenseInterface | undefined>>
-}
 
-const NavComponent: React.FC<NavComponentProps> = ({tensesList, setTense}): JSX.Element => {
+const NavComponent: React.FC = (): JSX.Element => {
+
+  const tenseEntities = useAppSelector(tenseEntitiesSelector);
+
   return (
     <div className={styles.container}>
       <div className={styles.themes}>
         <ul>
-          {tensesList.map((tense, idx) => (
+          {tenseEntities.map((tense, idx) => (
             <Link key={idx} to={tense.name}>
-              <li onClick={() => setTense(tense)}>{tense.name}</li>
+              <li>{tense.name}</li>
             </Link>
           ))}
         </ul>

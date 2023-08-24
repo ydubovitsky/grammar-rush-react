@@ -4,7 +4,6 @@ import MainPage from "../pages/main/main.page";
 import SignInComponent from "../pages/main/components/login/sign-in/sign-in.component";
 import RequireAuthRoute from "../hoc/RequireAuthRoute";
 import DashboardPage from "../pages/dashboard/dashboard.page";
-import TrainerComponent from "../pages/dashboard/components/trainer/trainer.component";
 import InfoComponent from "../pages/dashboard/components/info/info.component";
 import AdminComponent from "../pages/dashboard/components/admin/admin.component";
 import FaqPage from "../pages/faq/faq.page";
@@ -26,7 +25,6 @@ const RoutesComponent = () => (
           <Route path=":id" element={<TimesComponent />} />
         </Route>
         <Route element={<RequireAuthRoute />}>
-          <Route path="trainer" element={<TrainerComponent />} />
           <Route path="admin" element={<AdminComponent />} />
         </Route>
         <Route path="*" element={<Navigate to="info" replace />} />

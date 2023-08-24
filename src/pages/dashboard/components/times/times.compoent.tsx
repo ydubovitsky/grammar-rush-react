@@ -1,43 +1,15 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { TenseInterface } from "../../../../types";
+import { tenseByNameSelector } from "../../../../redux/features/tense/tense.slice";
+import { useAppSelector } from "../../../../redux/hooks/hooks";
 import { smoothScrollToElement } from "../../../../utils/smoothScrollToElement";
 import NavComponent from "./components/nav/nav.component";
 import TrainerComponent from "./components/trainer/trainer.component";
-import {
-  FUTURE_CONTINUOUS,
-  FUTURE_PERFECT,
-  FUTURE_SIMPLE,
-  PAST_CONTINUOUS,
-  PAST_PERFECT,
-  PAST_SIMPLE,
-  PRESENT_CONTINUOUS,
-  PRESENT_PERFECT,
-  PRESENT_SIMPLE,
-} from "../../../../assets/data";
 import styles from "./times.module.css";
-
-const TENSES_LIST = [
-  PRESENT_CONTINUOUS,
-  PAST_CONTINUOUS,
-  FUTURE_CONTINUOUS,
-  PRESENT_SIMPLE,
-  PAST_SIMPLE,
-  FUTURE_SIMPLE,
-  PRESENT_PERFECT,
-  PAST_PERFECT,
-  FUTURE_PERFECT,
-];
 
 const TimesComponent: React.FC = (): JSX.Element => {
   const { id } = useParams<string>();
-  const [tense, setTense] = useState<TenseInterface>();
 
-  //!TODO Переписать этот кошмар
-  useEffect(() => {
-    const tense = TENSES_LIST.find((tense) => tense.name === id);
-    tense !== undefined ? setTense(tense) : setTense(PRESENT_SIMPLE);
-  }, []);
+  const tense = useAppSelector((state) => tenseByNameSelector(state, id!));
 
   return (
     <div className={styles.container}>
@@ -61,7 +33,7 @@ const TimesComponent: React.FC = (): JSX.Element => {
         </div>
         <TrainerComponent tense={tense} />
       </div>
-      <NavComponent setTense={setTense} tensesList={TENSES_LIST} />
+      <NavComponent />
     </div>
   );
 };

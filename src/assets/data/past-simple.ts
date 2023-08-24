@@ -8,12 +8,10 @@ export const PAST_SIMPLE: TenseInterface = {
     [1, 0, 0],
     [2, 0, 1],
     [3, 0, 1],
-    [4, 0, 4],
-    [0, 1, 2],
-    [1, 1, 2],
-    [2, 1, 3],
-    [3, 1, 3],
-    [4, 1, 2],
+    [0, 1, 0],
+    [1, 1, 0],
+    [2, 1, 1],
+    [3, 1, 1],
   ],
   pronounts: [
     [{ I: "Я" }],
@@ -58,10 +56,8 @@ export const PAST_SIMPLE: TenseInterface = {
   ],
   auxiliaries: [[{ "": "" }], [{ "did not": "не" }]],
   verbs: [
-    [{ "worked yesterday": "работал вчера" }],
-    [{ "worked yesterday": "работали вчера" }],
-    [{ "work yesterday": "работал вчера" }],
-    [{ "work yesterday": "работали вчера" }],
+    [{ "worked yesterday": "работал вчера" }, {"played last sunday": "играл в прошлое воскресенье"}],
+    [{ "worked yesterday": "работали вчера" }, {"played last sunday": "играли в прошлое воскресенье"}],
   ],
   html: `${template}`
 };
