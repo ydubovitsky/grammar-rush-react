@@ -24,6 +24,9 @@ const FooterComponent = () => {
             <Link to={"faq"}>
               <p>Часто задаваемые вопросы</p>
             </Link>
+            <Link to={"gratitude"}>
+              <p>Благодароность</p>
+            </Link>
             <Link to={"privacy-policy"}>
               <p>Скачать</p>
             </Link>
@@ -38,7 +41,7 @@ const FooterComponent = () => {
           </p>
         </div>
         <div className={styles.about}>
-          <p>О приложении</p>
+          <h1>О приложении</h1>
           <p>
             Специально разработанные онлайн-упражнения направлены на изучение и
             запоминание способов образования настоящего, прошедшего и будущего

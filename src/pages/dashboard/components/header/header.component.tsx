@@ -23,7 +23,7 @@ const HeaderComponent: React.FC = (): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.logo}>Infinity Grammar</div>
+      <div className={styles.logo}>Yeap! English</div>
       <div className={styles.nav}>
         <Link to={"/"} className={styles.navEl}>
           Главная страница

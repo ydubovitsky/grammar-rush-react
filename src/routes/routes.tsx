@@ -10,6 +10,8 @@ import FaqPage from "../pages/faq/faq.page";
 import PrivacyPolicyPage from "../pages/privacy-policy/privacy-policy.page";
 import TermOfUsePage from "../pages/term-of-use/term-of-use.page";
 import TimesComponent from "../pages/dashboard/components/times/times.compoent";
+import NotFoundPage from "../pages/not-found/not-found.page";
+import GratitudePage from "../pages/gratitude/gratitude.page";
 
 const RoutesComponent = () => (
   <Routes>
@@ -30,9 +32,11 @@ const RoutesComponent = () => (
         <Route path="*" element={<Navigate to="info" replace />} />
       </Route>
       <Route path="faq" element={<FaqPage />} />
+      <Route path="gratitude" element={<GratitudePage />} />
       <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="term-of-use" element={<TermOfUsePage />} />
-      <Route path="*" element={<Navigate to="page-not-found" replace />} />
+      <Route path="page-not-found" element={<NotFoundPage />} />
+      {/* <Route path="*" element={<Navigate to="page-not-found" replace />} /> */}
     </Route>
     {/* //! Default Redirect */}
     <Route path="*" element={<Navigate to="/" replace />} />

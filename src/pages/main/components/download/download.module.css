@@ -6,8 +6,7 @@
 
 .columnContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  text-shadow: 1px 1px 3px black;
+  grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
 }
 
 .firstColumn,
@@ -21,7 +20,7 @@
 .block {
   padding: 5%;
   color: white;
-  background-color: #333456;
+  background-color: var(--backgroundThird);
   border-radius: 10px;
   box-shadow: 5px 3px 10px rgb(184, 184, 184);
 }

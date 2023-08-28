@@ -21,6 +21,8 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-, "assets/data"  ]
+    "src",
+    "assets/data"
+  ],
+  "files": ["./src/globals.d.ts"]
 }

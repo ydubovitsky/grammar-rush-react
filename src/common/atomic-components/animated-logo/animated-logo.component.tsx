@@ -6,7 +6,7 @@ interface PageProps {
   fontSize?: string | number;
 }
 
-const AnimatedLogoAtomicComponent: React.FC<PageProps> = ({name = "Infinity Grammar", fontSize="3rem"}) => {
+const AnimatedLogoAtomicComponent: React.FC<PageProps> = ({name = "Yeap! English", fontSize="3rem"}) => {
 
   const logoElementRef = useRef<HTMLDivElement>(null);
 
@@ -20,7 +20,7 @@ const AnimatedLogoAtomicComponent: React.FC<PageProps> = ({name = "Infinity Gram
 
   const splitStringToCharArray = (str: string) => {
     return str.split("").map((char, idx) => {
-      if(char === "G") return <span key={idx} className={styles.char}>{char}</span>
+      if(char === "E") return <span key={idx} className={styles.char}>{char}</span>
       return <span key={idx}>{char}</span>;
     })}
 

@@ -3,68 +3,68 @@
 
 version: '3'
 services:
-  # You can rename this service special for docker-hub like: ydubovitsky/infinity-grammar
-  infinity-grammar-spring:
+  # You can rename this service special for docker-hub like: ydubovitsky/yeap-english
+  yeap-english-spring:
     build:
-      context: ./infinity-grammar-spring
+      context: ./yeap-english-spring
       dockerfile: ./docker/production/Dockerfile
     environment:
       PROFILE_ACTIVE: postgres
       ADMIN_NAME: admin
       ADMIN_PASSWORD: password
-      POSTGRES_URL: jdbc:postgresql://infinity-grammar-db:5432/postgres
+      POSTGRES_URL: jdbc:postgresql://yeap-english-db:5432/postgres
       POSTGRES_USERNAME: postgres
       POSTGRES_PASSWORD: changeme
       POSTGRES_DDL_AUTO: update
     depends_on:
-      - infinity-grammar-db
-      - infinity-grammar-pgadmin
+      - yeap-english-db
+      - yeap-english-pgadmin
     networks:
-      - infinity-grammar
+      - yeap-english
 
-  infinity-grammar-react:
+  yeap-english-react:
     build:
       context: .
       dockerfile: ./docker/static-server/Dockerfile
       args:
         # Change me!
-        - REACT_APP_BACKEND_URL=http://api.infinity-grammar.ru
+        - REACT_APP_BACKEND_URL=http://api.yeap-english.ru
     networks:
-     - infinity-grammar
+     - yeap-english
 
-  infinity-grammar-db:
+  yeap-english-db:
     image: postgres:alpine3.17
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: changeme
       PGDATA: /data/postgres
     volumes:
-      - infinity-grammar-db:/data/postgres
+      - yeap-english-db:/data/postgres
     networks:
-      - infinity-grammar
+      - yeap-english
     restart: unless-stopped
 
-  infinity-grammar-pgadmin:
-    container_name: infinity-grammar-pgadmin
+  yeap-english-pgadmin:
+    container_name: yeap-english-pgadmin
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
       PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
-      - infinity-grammar-pgadmin:/var/lib/pgadmin
+      - yeap-english-pgadmin:/var/lib/pgadmin
     depends_on:
-      - infinity-grammar-db
+      - yeap-english-db
     ports:
       - "${PGADMIN_PORT:-5050}:80"
     networks:
-      - infinity-grammar
+      - yeap-english
     restart: unless-stopped
 
 networks:
-  infinity-grammar:
+  yeap-english:
     driver: bridge
 
 volumes:
-  infinity-grammar-db:
-  infinity-grammar-pgadmin:
+  yeap-english-db:
+  yeap-english-pgadmin:

@@ -13,7 +13,8 @@ const TimesComponent: React.FC = (): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.tenseContainer}>
+      <NavComponent />
+      <div className={styles.tenseContainer} id="tenseContainer">
         <div className={styles.tenseInfo}>
           <div className={styles.header}>
             <h1>Тема: {tense?.name}</h1>
@@ -33,7 +34,6 @@ const TimesComponent: React.FC = (): JSX.Element => {
         </div>
         <TrainerComponent tense={tense} />
       </div>
-      <NavComponent />
     </div>
   );
 };

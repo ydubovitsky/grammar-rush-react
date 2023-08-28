@@ -1,35 +1,37 @@
 import React from "react";
-import AnimatedLogoAtomicComponent from "../../../../common/atomic-components/animated-logo/animated-logo.component";
-import ButtonComponent from "../../../../common/components/button/button.component";
+import { Link } from "react-router-dom";
 import styles from "./hero.module.css";
-import MenuComponent from "./menu/menu.component";
+import MenuComponent from "./components/menu/menu.component";
+import HeroSvg from "./svg/teacher.svg";
 import { Fade } from "react-awesome-reveal";
-// import Spline from "@splinetool/react-spline";
 
 const HeroComponent: React.FC = (): JSX.Element => {
   return (
-    <div className={styles.container}>
-      <div className={styles.leftColumn}>
-        <Fade>
-          <div className={styles.content}>
-            <AnimatedLogoAtomicComponent />
-            <h1>Лучшее приложение для изучения грамматики</h1>
-            <h2>Доступны мобильное и веб приложение</h2>
-            <ButtonComponent name="Скачать" />
+    <Fade>
+      <div className={styles.container}>
+        <nav>
+          <h1>Yeap! English</h1>
+          <ul>
+            <Link to={"dashboard/tenses/Future Continuous"}>Грамматика</Link>
+            <Link to={"dashboard/articles"}>Теория</Link>
+            <Link to={"dashboard/articles"}>Мобильное приложение</Link>
+            <Link to={"dashboard/articles"}>Статьи</Link>
+            <Link to={"dashboard/info"}>Информация</Link>
+            <MenuComponent />
+          </ul>
+        </nav>
+        <div className={styles.hero}>
+          <div className={styles.svgContainer}>
+            <img src={HeroSvg} alt="Your SVG" />
           </div>
-        </Fade>
-        <div className={styles.circleButton}>
-          <i className="fas fa-chevron-right"></i>
+          <div className={styles.description}>
+            <h1>Английский? Yeap!</h1>
+            <h3>Больше никакой воды и нудной теории</h3>
+            <h3>Все коротко, просто и понятно</h3>
+          </div>
         </div>
       </div>
-      <div className={styles.rightColumn}>
-        {/* <Spline scene="https://prod.spline.design/2Q-b7QNJCNXgVYQj/scene.splinecode" /> */}
-        <div className={styles.circleButton}>
-          <i className="fas fa-chevron-left"></i>
-        </div>
-      </div>
-      <MenuComponent />
-    </div>
+    </Fade>
   );
 };
 

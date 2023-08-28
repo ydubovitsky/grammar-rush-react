@@ -1,6 +1,6 @@
 import SectionTitleComponent from "../../../../common/atomic-components/section-title/section-title.component";
-import ButtonComponent from "../../../../common/components/button/button.component";
 import styles from "./features.module.css";
+import FeatureSvg from "./svg/features.svg";
 import { Fade } from "react-awesome-reveal";
 interface FeaturePropsInterface {
   icon: string;
@@ -10,9 +10,14 @@ interface FeaturePropsInterface {
 
 const featuresData: FeaturePropsInterface[] = [
   {
+    icon: "fas fa-arrow-right",
+    title: "Простая и понятная теория",
+    text: "Никакой бездумного заучивания правил, с нашим подходом вы раз и навсегда поймете английскую грамматику",
+  },
+  {
     icon: "fas fa-meteor",
-    title: "Неограниченное число упражнений",
-    text: "Онлайн-тренажер по грамматике английского языка Infinity Grammar — это бесконечные упражнения, позволяющие оттачить ваши навыки до автоматизма",
+    title: "Уникальное мобильное приложение",
+    text: "Онлайн-тренажер по грамматике английского языка Yeap! English — это бесконечные упражнения, позволяющие оттачить ваши навыки до автоматизма",
   },
   {
     icon: "fas fa-feather-alt",
@@ -26,7 +31,7 @@ const featuresData: FeaturePropsInterface[] = [
   },
 ];
 
-const FeaturesComponent: React.FC = () : JSX.Element => {
+const FeaturesComponent: React.FC = (): JSX.Element => {
   const showFeatureEl = (array: FeaturePropsInterface[]): JSX.Element[] => {
     return array.map((data, idx) => {
       return (
@@ -44,13 +49,15 @@ const FeaturesComponent: React.FC = () : JSX.Element => {
   return (
     <div className={styles.container}>
       <Fade>
-        <SectionTitleComponent
-          name="Потрясающие особенности нашего приложения"
-        />
+        <SectionTitleComponent name="Основные особенности нашего подхода к изучению языка" />
         <div className={styles.featuresContainer}>
-          {showFeatureEl(featuresData)}
+          <div className={styles.svgContainer}>
+            <img src={FeatureSvg} alt="Your SVG" />
+          </div>
+          <div className={styles.featuresPoints}>
+            {showFeatureEl(featuresData)}
+          </div>
         </div>
-        <ButtonComponent name="Начать прямо сейчас" />
       </Fade>
     </div>
   );

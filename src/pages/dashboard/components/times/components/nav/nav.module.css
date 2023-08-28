@@ -1,49 +1,28 @@
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
   align-items: center;
-  justify-content: start;
-  padding: 50px;
-  font-size: 1.1rem;
-  text-align: start;
-  background-color: #eef4fade;
-  border-top: 1px solid rgb(230, 230, 230);
-  border-bottom: 1px solid rgb(230, 230, 230);
-  border-left: 1px solid rgb(212, 212, 212);
+  justify-content: center;
 }
 
-.themes {
-  position: sticky;
-  top: 70px;
-  padding: 10% 15%;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 1px 1px 1px silver;
-}
-
-.themes a {
-  color: black;
-  text-decoration: none;
-}
-
-.container ul {
+.tense {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  list-style: none;
-}
-
-.container ul li {
-  padding: 10px 35px;
-  cursor: pointer;
-  border-radius: 5px;
-  box-shadow: 1px 1px 2px 1px rgb(221, 221, 221);
+  width: 250px;
+  padding: 5%;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid rgb(228, 228, 228);
   transition: 0.3s ease;
 }
 
-.container ul li:hover {
-  color: white;
-  background-color: var(--backgroundThird);
-  border-color: var(--backgroundThird);
-  transform: scale(0.98);
+.tense:hover {
+  background-color: rgba(70, 70, 70, 0.432);
+  border-radius: 50%;
+}
+
+.tense a {
+  color: black;
+  text-decoration: none;
 }

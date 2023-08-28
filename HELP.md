@@ -33,3 +33,6 @@ https://stackoverflow.com/questions/68037185/could-not-find-a-declaration-file-f
 
 ### How to update webpack config for a react project created using create-react-app?
 https://stackoverflow.com/questions/63280109/how-to-update-webpack-config-for-a-react-project-created-using-create-react-app
+
+### 2d svg people
+https://storyset.com/question

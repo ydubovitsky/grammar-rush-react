@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import {
   authStatusSelector,
   logout,
-} from "../../../../../redux/features/auth/auth.slice";
-import { FETCH_STATUS } from "../../../../../redux/types";
+} from "../../../../../../redux/features/auth/auth.slice";
+import { FETCH_STATUS } from "../../../../../../redux/types";
 import styles from "./menu.module.css";
-import toggleOverflowVisibleHandler from "../../../../../utils/toggleOverflowVisible";
+import toggleOverflowVisibleHandler from "../../../../../../utils/toggleOverflowVisible";
 
-const MenuComponent: React.FC = () => {
+const MenuComponent: React.FC = (): JSX.Element => {
   const menuElementRef = useRef<HTMLDivElement>(null);
   const status: FETCH_STATUS = useSelector(authStatusSelector);
   const dispatch = useDispatch();
@@ -45,9 +45,6 @@ const MenuComponent: React.FC = () => {
       ></i>
       <div ref={menuElementRef} className={styles.menu}>
         {showMenuElements(status)}
-        <Link to={"dashboard"} className={styles.menuBtn}>
-          Войти без регистрации
-        </Link>
         <p onClick={menuToggleHandler} className={styles.menuBtn}>
           Закрыть
         </p>

@@ -28,10 +28,10 @@
 :root {
   --backgroundPrimary: #F7FAFD;
   --backgroundSecondary: #2b2d47;
-  --backgroundThird: #8547CA;
+  --backgroundThird: #3866CE;
 
   --textPrimary: black;
-  --textSecondary: #8547CA;
+  --textSecondary: #3866CE;
 }
 
 * {

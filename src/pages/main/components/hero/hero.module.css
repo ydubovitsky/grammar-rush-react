@@ -1,83 +1,48 @@
 .container {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  align-items: center;
-  justify-items: center;
-  min-height: 100vh;
-  font-family: 'Spice Rice';
+  padding: 2%;
+  color: white;
+  background: linear-gradient(90deg, rgba(51,98,204,1) 0%, rgba(155,186,255,1) 100%);
 }
 
-.content {
-  display: grid;
+.container nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container nav ul {
+  display: flex;
   gap: 20px;
   align-items: center;
-  justify-items: start;
-  padding: 10%;
 }
 
-.content h1 {
-  font-size: 3.5rem;
-  color: var(--textSecondary);
-  text-transform: uppercase;
+.container nav ul a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
-.leftColumn {
-  position: relative;
+.container nav ul a:hover {
+  color: red;
+}
+
+.hero {
   display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(400px, 1fr));
   align-items: center;
-  justify-items: center;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.description h1 {
+  font-size: 7.5vw;
+}
+
+.svgContainer {
   width: 100%;
   height: 100%;
-  background-color: var(--backgroundPrimary);
-}
-
-.rightColumn {
-  position: relative;
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: var(--backgroundSecondary);
-}
-
-.circleButton {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
-.rightColumn .circleButton {
-  top: 40%;
-  right: 100%;
-  z-index: 1000;
-  background-color: var(--backgroundSecondary);
-  transform: translateX(50%);
-}
-
-.leftColumn .circleButton {
-  top: 60%;
-  left: 100%;
-  z-index: 1000;
-  background-color: red;
-  background-color: var(--backgroundPrimary);
-  transform: translateX(-50%);
-}
-
-.circleButton i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 2rem;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.rightColumn .circleButton i {
-  color: var(--backgroundPrimary);;
-}
-
-.leftColumn .circleButton i {
-  color: var(--backgroundSecondary);;
 }

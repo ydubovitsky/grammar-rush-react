@@ -6,6 +6,17 @@
   border-bottom: 1px solid silver;
 }
 
+.faqContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(400px, 1fr));
+  align-items: center;
+  justify-items: center;
+}
+
+.faqContainer h1 {
+  font-size: 5vw;
+}
+
 .questionContainer {
   display: flex;
   flex-direction: column;

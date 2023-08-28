@@ -4,13 +4,12 @@
   align-items: center;
   justify-items: center;
   padding: 5%;
-  background-color: var(--backgroundPrimary);
 }
 
 .featuresContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit,minmax(400px, 1fr));
+  align-items: center;
 }
 
 .feature {
@@ -29,6 +28,11 @@
   align-items: center;
   justify-content: space-evenly;
   justify-items: center;
+}
+
+.svgContainer {
+  width: 100%;
+  height: 100%;
 }
 
 .featureHeader i {

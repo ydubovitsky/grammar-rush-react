@@ -12,9 +12,9 @@ const MainPage: React.FC = () => {
       <HeroComponent />
       <Outlet />
       <FeaturesComponent />
+      <ExerciseListComponent />
       <DownloadComponent />
       <AboutUsComponent />
-      <ExerciseListComponent />
     </div>
   );
 };

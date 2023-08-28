@@ -1,6 +1,6 @@
 # How to run this from another directory?
 # For example:
-# docker build . -t ydubovitsky/infinity-grammar-react:0.0.1 -f docker/dev/Dockerfile
+# docker build . -t ydubovitsky/yeap-english-react:0.0.1 -f docker/dev/Dockerfile
 
 FROM node:alpine3.17 as build
 LABEL author="y.dubovitsky"
