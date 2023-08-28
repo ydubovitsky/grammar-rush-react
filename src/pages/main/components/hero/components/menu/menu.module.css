@@ -1,3 +1,7 @@
+.container {
+  display: block;
+}
+
 .barsBtn {
   font-size: 1.5rem;
   color: white;
@@ -10,7 +14,7 @@
 }
 
 .menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: -100%;
   z-index: 1000;
@@ -28,7 +32,7 @@
 
 .menuBtn {
   font-size: 2rem;
-  color: white;
+  color: white !important;
   text-decoration: none;
   transition: 0.3s ease-in;
 }

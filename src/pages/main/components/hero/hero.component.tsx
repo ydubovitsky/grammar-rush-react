@@ -4,6 +4,7 @@ import styles from "./hero.module.css";
 import MenuComponent from "./components/menu/menu.component";
 import HeroSvg from "./svg/teacher.svg";
 import { Fade } from "react-awesome-reveal";
+import NavigationPanelComponent from "./components/navigation/navigation-panel.component";
 
 const HeroComponent: React.FC = (): JSX.Element => {
   return (
@@ -11,14 +12,7 @@ const HeroComponent: React.FC = (): JSX.Element => {
       <div className={styles.container}>
         <nav>
           <h1>Yeap! English</h1>
-          <ul>
-            <Link to={"dashboard/tenses/Future Continuous"}>Грамматика</Link>
-            <Link to={"dashboard/articles"}>Теория</Link>
-            <Link to={"dashboard/articles"}>Мобильное приложение</Link>
-            <Link to={"dashboard/articles"}>Статьи</Link>
-            <Link to={"dashboard/info"}>Информация</Link>
-            <MenuComponent />
-          </ul>
+          <NavigationPanelComponent/>
         </nav>
         <div className={styles.hero}>
           <div className={styles.svgContainer}>

@@ -24,32 +24,32 @@ const MenuComponent: React.FC = (): JSX.Element => {
   const showMenuElements = (status: string) => {
     if (status === FETCH_STATUS.AUTHENTICATED) {
       return (
-        <div className={styles.menuBtn} onClick={() => dispatch(logout())}>
-          Выйти
+        <div onClick={() => dispatch(logout())}>
+          <p className={styles.menuBtn}>Выйти</p>
         </div>
       );
     } else {
       return (
-        <Link to={"/main/auth"} className={styles.menuBtn}>
-          Войти
+        <Link to={"/main/auth"}>
+          <p className={styles.menuBtn}>Войти</p>
         </Link>
       );
     }
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <i
         onClick={menuToggleHandler}
         className={`fas fa-bars ${styles.barsBtn}`}
       ></i>
       <div ref={menuElementRef} className={styles.menu}>
         {showMenuElements(status)}
-        <p onClick={menuToggleHandler} className={styles.menuBtn}>
+        <p className={styles.menuBtn} onClick={menuToggleHandler}>
           Закрыть
         </p>
       </div>
-    </>
+    </div>
   );
 };
 
