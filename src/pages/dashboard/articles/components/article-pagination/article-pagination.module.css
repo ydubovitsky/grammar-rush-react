@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  color: white;
+  background-color: var(--backgroundSecondary);
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.navBlock:hover {
+  background-color: var(--backgroundThird);
+}
+
+.navBlock:active {
+  transform: scale(0.95);
+}

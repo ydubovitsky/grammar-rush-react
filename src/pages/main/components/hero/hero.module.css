@@ -1,41 +1,25 @@
 .container {
-  padding: 2%;
-  color: white;
-  background: linear-gradient(90deg, rgba(51,98,204,1) 0%, rgba(155,186,255,1) 100%);
-}
-
-.container nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.container nav ul {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.container nav ul a {
-  color: white;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.hero {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(400px, 1fr));
   align-items: center;
+  padding: 2%;
+  color: white;
+  background: linear-gradient(90deg, rgba(51,98,204,1) 0%, rgba(155,186,255,1) 100%);
 }
 
 .description {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  text-align: center;
 }
 
 .description h1 {
   font-size: 7.5vw;
+}
+
+.description p {
+  font-style: italic;
 }
 
 .svgContainer {

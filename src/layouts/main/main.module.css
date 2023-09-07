@@ -1,0 +1,9 @@
+.container {
+  display: grid;
+  background-attachment: fixed;
+  background-size: contain;
+}
+
+.content {
+  margin-top: 50px;
+}

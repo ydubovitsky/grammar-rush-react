@@ -1,4 +1,4 @@
-import { showPopup } from '../features/popup/popup-slice';
+import { showPopup } from '../features/popup/popup.slice';
 
 const POPUP_PROPERTIES = {
   loginRejected: {

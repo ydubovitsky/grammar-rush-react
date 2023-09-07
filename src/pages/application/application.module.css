@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 5%;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  align-items: flex-start;
+  min-height: 600px;
+  padding: 20px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

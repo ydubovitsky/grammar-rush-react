@@ -2,7 +2,7 @@ import styles from './popup.module.css';
 import cn from 'classnames';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { popupStateSelector, hidePopup } from '../../../redux/features/popup/popup-slice';
+import { popupStateSelector, hidePopup } from '../../../redux/features/popup/popup.slice';
 
 const SHOW_TIME_POPUP = 4000;
 

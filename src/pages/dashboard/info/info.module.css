@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+}
+
+.svg {
+  width: 100%;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

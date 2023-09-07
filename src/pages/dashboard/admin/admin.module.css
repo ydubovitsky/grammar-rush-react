@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  gap: 20px;
+  padding: 5%;
+  border: 1px solid silver;
+}
+
+.container textarea {
+  min-height: 200px;
+}

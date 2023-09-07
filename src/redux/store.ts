@@ -1,7 +1,8 @@
 import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
 import authReducer from "./features/auth/auth.slice";
+import articlesReducer from "./features/articles/articles.slice";
 import PopupMiddleware from "./middleware/popup.middleware";
-import popupReducer from "./features/popup/popup-slice";
+import popupReducer from "./features/popup/popup.slice";
 import tenseReducer from "./features/tense/tense.slice";
 import { loadState, saveState } from "../services/localStorageService";
 
@@ -11,7 +12,8 @@ const store = configureStore({
   reducer: {
     auth: authReducer,
     popup: popupReducer,
-    tense: tenseReducer
+    tense: tenseReducer,
+    articles: articlesReducer
   },
   preloadedState: {
     auth: persistedState,

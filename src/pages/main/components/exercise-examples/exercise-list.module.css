@@ -2,5 +2,6 @@
   display: grid;
   gap: 20px;
   padding: 5%;
+  text-align: center;
   background-color: var(--backgroundPrimary);
 }

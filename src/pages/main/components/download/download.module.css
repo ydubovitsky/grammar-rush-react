@@ -2,6 +2,7 @@
   display: grid;
   gap: 20px;
   padding: 5%;
+  text-align: center;
 }
 
 .columnContainer {
@@ -15,6 +16,10 @@
   gap: 20px;
   align-content: space-evenly;
   padding: 20% 10%;
+}
+
+.secondColumn {
+  min-height: 500px;
 }
 
 .block {

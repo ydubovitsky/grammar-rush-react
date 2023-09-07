@@ -34,11 +34,11 @@ interface TenseStateInterface {
   error: string | null;
 }
 
-const initialState = {
+const initialState : TenseStateInterface = {
   tenseEntities: TENSES_LIST,
   status: FETCH_STATUS.IDLE,
   error: null,
-} as TenseStateInterface;
+};
 
 const tenseSlice = createSlice({
   name: "tense",

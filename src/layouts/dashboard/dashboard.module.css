@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  background-attachment: fixed;
+  background-size: contain;
+}
+
+.content {
+  padding: 5%;
+  margin-top: 50px;
+}

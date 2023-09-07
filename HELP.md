@@ -36,3 +36,6 @@ https://stackoverflow.com/questions/63280109/how-to-update-webpack-config-for-a-
 
 ### 2d svg people
 https://storyset.com/question
+
+### DnD files
+https://www.npmjs.com/package/react-drag-drop-files

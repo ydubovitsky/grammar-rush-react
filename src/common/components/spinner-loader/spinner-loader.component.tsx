@@ -1,6 +1,6 @@
 import styles from './spinner-loader.module.css';
 
-const SpinnerLoaderComponent: React.FC = () => {
+const SpinnerLoaderComponent: React.FC = () : JSX.Element => {
   return (
 <svg xmlns="http://www.w3.org/2000/svg" className={styles.container} viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
 <g>

@@ -1,12 +1,16 @@
 import SectionTitleComponent from "../../../../common/atomic-components/section-title/section-title.component";
 import styles from "./download.module.css";
 import { Fade } from "react-awesome-reveal";
-import Spline from "@splinetool/react-spline";
+import React, { Suspense } from "react";
+import MobileApp3dComponent from "../../../../common/components/mobile-app-3d/mobile-app-3d.component";
+// import Spline from "@splinetool/react-spline";
+
+const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
 const DownloadComponent = () => {
   return (
     <div className={styles.container}>
-      <Fade>
+      <Fade triggerOnce>
         <SectionTitleComponent
           name="Скачать приложение сейчас"
           description="Установите наше приложение и получите незаменимого помощника, который всегда под рукой"
@@ -30,7 +34,7 @@ const DownloadComponent = () => {
             </div>
           </div>
           <div className={styles.secondColumn}>
-            <Spline scene="https://prod.spline.design/DLgBQnJu9JmWhUa5/scene.splinecode" />
+            <MobileApp3dComponent/>
           </div>
           <div className={styles.thirdColumn}>
             <div className={styles.block}>

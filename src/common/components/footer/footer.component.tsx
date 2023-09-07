@@ -12,22 +12,22 @@ const FooterComponent = () => {
             <AnimatedLogoAtomicComponent />
           </div>
           <div className={styles.anchorsContainer}>
-            <Link to={"main"}>
+            <Link to={"/"}>
               <p>Главная страница</p>
             </Link>
-            <Link to={"privacy-policy"}>
+            <Link to={"/privacy-policy"}>
               <p>Политика конфеденциальности</p>
             </Link>
-            <Link to={"term-of-use"}>
+            <Link to={"/term-of-use"}>
               <p>Условия использования</p>
             </Link>
-            <Link to={"faq"}>
+            <Link to={"/faq"}>
               <p>Часто задаваемые вопросы</p>
             </Link>
-            <Link to={"gratitude"}>
+            <Link to={"/gratitude"}>
               <p>Благодароность</p>
             </Link>
-            <Link to={"privacy-policy"}>
+            <Link to={"/application"}>
               <p>Скачать</p>
             </Link>
           </div>

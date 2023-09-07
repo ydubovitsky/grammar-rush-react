@@ -6,7 +6,7 @@ import DownloadComponent from "./components/download/download.component";
 import AboutUsComponent from "./components/about-us/about-us.component";
 import { Outlet } from "react-router-dom";
 
-const MainPage: React.FC = () => {
+const MainPage: React.FC = () : JSX.Element => {
   return (
     <div className={styles.container}>
       <HeroComponent />
