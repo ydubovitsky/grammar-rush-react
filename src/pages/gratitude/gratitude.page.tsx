@@ -9,6 +9,8 @@ const GratitudePage : React.FC = () : JSX.Element => {
       <img src={GratitudeSvg} alt="There is no" />
       <p>Автор выражает бесконечную благодарность коллективу https://storyset.com за предоставленные изображение</p>
       <a href="https://storyset.com/people">People illustrations by Storyset</a>
+      <p>А также коллективу https://www.flaticon.com за предоставленные превосходных иконок</p>
+      <a href="https://www.flaticon.com/free-icons/united-kingdom" title="united kingdom icons">United kingdom icons created by Freepik - Flaticon</a>
     </div>
   )
 }
