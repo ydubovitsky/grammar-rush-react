@@ -9,18 +9,18 @@ services:
       context: ./yeap-english-spring
       dockerfile: ./docker/production/Dockerfile
     environment:
-      PROFILE_ACTIVE: postgres
-      ADMIN_NAME: admin
-      ADMIN_PASSWORD: password
+      PROFILE_ACTIVE: ${PROFILE_ACTIVE:-postgres}
+      ADMIN_NAME: ${ADMIN_NAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-password}
       POSTGRES_URL: jdbc:postgresql://yeap-english-db:5432/postgres
-      POSTGRES_USERNAME: postgres
-      POSTGRES_PASSWORD: changeme
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      ALLOWED_ORIGINS_ARRAY: ${ALLOWED_ORIGINS_ARRAY:-http://localhost:3000}
       POSTGRES_DDL_AUTO: update
     depends_on:
       - yeap-english-db
-      - yeap-english-pgadmin
     networks:
-      - yeap-english
+      - nginx-proxy-manager_default
 
   yeap-english-react:
     build:
@@ -28,43 +28,25 @@ services:
       dockerfile: ./docker/static-server/Dockerfile
       args:
         # Change me!
-        - REACT_APP_BACKEND_URL=http://api.yeap-english.ru
+        - REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL}
     networks:
-     - yeap-english
+     - nginx-proxy-manager_default
 
   yeap-english-db:
     image: postgres:alpine3.17
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: changeme
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
       PGDATA: /data/postgres
     volumes:
       - yeap-english-db:/data/postgres
     networks:
-      - yeap-english
-    restart: unless-stopped
-
-  yeap-english-pgadmin:
-    container_name: yeap-english-pgadmin
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
-      PGADMIN_CONFIG_SERVER_MODE: 'False'
-    volumes:
-      - yeap-english-pgadmin:/var/lib/pgadmin
-    depends_on:
-      - yeap-english-db
-    ports:
-      - "${PGADMIN_PORT:-5050}:80"
-    networks:
-      - yeap-english
+      - nginx-proxy-manager_default
     restart: unless-stopped
 
 networks:
-  yeap-english:
-    driver: bridge
+  nginx-proxy-manager_default:
+    external: true
 
 volumes:
   yeap-english-db:
-  yeap-english-pgadmin:
