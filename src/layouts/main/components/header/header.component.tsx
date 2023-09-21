@@ -12,7 +12,7 @@ const HeaderComponent = () => {
     <header className={styles.container}>
       <div className={styles.logo}>
         <Link to="/">
-          <AnimatedLogoAtomicComponent fontSize={"2rem"} name="Yeap! English" color="white"/>
+          <AnimatedLogoAtomicComponent fontSize={"1.5rem"} name="Yeap! English" color="white"/>
         </Link>
       </div>
       <nav className={styles.nav}>

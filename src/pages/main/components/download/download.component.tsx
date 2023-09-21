@@ -1,11 +1,7 @@
-import SectionTitleComponent from "../../../../common/atomic-components/section-title/section-title.component";
-import styles from "./download.module.css";
 import { Fade } from "react-awesome-reveal";
-import React, { Suspense } from "react";
+import SectionTitleComponent from "../../../../common/atomic-components/section-title/section-title.component";
 import MobileApp3dComponent from "../../../../common/components/mobile-app-3d/mobile-app-3d.component";
-// import Spline from "@splinetool/react-spline";
-
-const Spline = React.lazy(() => import("@splinetool/react-spline"));
+import styles from "./download.module.css";
 
 const DownloadComponent = () => {
   return (

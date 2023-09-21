@@ -56,7 +56,7 @@ const PrivacyPolicyPage : React.FC = () : JSX.Element => {
         Пользователь может ознакомиться с условиями Пользовательского соглашения
         по следующей ссылке:{" "}
         <span id="span_id_пользовательское_соглашение">
-          http://Infinity-Grammar.ru/term-of-use
+          https://yeap-english.ru/term-of-use
         </span>
         .
       </p>
@@ -508,7 +508,7 @@ const PrivacyPolicyPage : React.FC = () : JSX.Element => {
         Пользователи могут ознакомиться с условиями данной Политики по следующей
         ссылке:{" "}
         <span id="span_id_ссылка_политика">
-          http://Infinity-Grammar.ru/privacy-policy
+          https://yeap-english.ru/privacy-policy
         </span>
         .
       </p>
