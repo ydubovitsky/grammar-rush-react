@@ -3,6 +3,8 @@ import SectionTitleComponent from "../../../../common/atomic-components/section-
 import MobileApp3dComponent from "../../../../common/components/mobile-app-3d/mobile-app-3d.component";
 import styles from "./download.module.css";
 
+const SPLINE_URL = "https://prod.spline.design/DLgBQnJu9JmWhUa5/scene.splinecode";
+
 const DownloadComponent = () => {
   return (
     <div className={styles.container}>
@@ -30,7 +32,7 @@ const DownloadComponent = () => {
             </div>
           </div>
           <div className={styles.secondColumn}>
-            <MobileApp3dComponent/>
+            <MobileApp3dComponent url={SPLINE_URL}/>
           </div>
           <div className={styles.thirdColumn}>
             <div className={styles.block}>

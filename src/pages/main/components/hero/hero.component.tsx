@@ -1,24 +1,14 @@
 import React from "react";
-import { Fade, Slide } from "react-awesome-reveal";
+import MobileApp3dComponent from "../../../../common/components/mobile-app-3d/mobile-app-3d.component";
 import styles from "./hero.module.css";
-import HeroSvg from "./svg/teacher.svg";
+
+const SPLINE_URL =
+  "https://prod.spline.design/zepWzaKNvJWmV3dB/scene.splinecode";
 
 const HeroComponent: React.FC = (): JSX.Element => {
-
   return (
     <div className={styles.container}>
-      <Fade>
-        <div className={styles.svgContainer}>
-          <img src={HeroSvg} alt="There is no" />
-        </div>
-      </Fade>
-      <div className={styles.description}>
-        <Slide cascade={true} triggerOnce>
-          <h1>Английский? Yeap!</h1>
-          <p>Больше никакой воды и скучной теории</p>
-          <p>Все коротко, просто и понятно</p>
-        </Slide>
-      </div>
+      <MobileApp3dComponent url={SPLINE_URL} />
     </div>
   );
 };

@@ -2,12 +2,14 @@ import UnitTitleComponent from "../../common/atomic-components/unit-title/unit-t
 import MobileApp3dComponent from "../../common/components/mobile-app-3d/mobile-app-3d.component";
 import styles from "./application.module.css";
 
+const SPLINE_URL = "https://prod.spline.design/DLgBQnJu9JmWhUa5/scene.splinecode";
+
 const ApplicationPage: React.FC = (): JSX.Element => {
   return (
     <div className={styles.container}>
       <UnitTitleComponent text="Скачайте наше приложение" />
       <div className={styles.content}>
-        <MobileApp3dComponent />
+        <MobileApp3dComponent url={SPLINE_URL}/>
         <div className={styles.description}>
           <p>
             Наше приложение "Yeap! English" - это удобный инструмент для

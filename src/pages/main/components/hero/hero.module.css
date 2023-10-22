@@ -1,29 +1,3 @@
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(400px, 1fr));
-  align-items: center;
-  padding-bottom: 10%;
-  color: white;
-  background: linear-gradient(90deg, rgba(51,98,204,1) 0%, rgba(155,186,255,1) 100%);
-}
-
-.description {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-.description h1 {
-  font-size: 7.5vw;
-}
-
-.description p {
-  font-style: italic;
-}
-
-.svgContainer {
-  width: 100%;
-  height: 100%;
+	height: 100vh;
 }
