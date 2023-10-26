@@ -4,7 +4,11 @@ import SkypeIconAtomicComponent from '../../atomic-components/skype-icon/skype-i
 import TgIconAtomicComponent from '../../atomic-components/tg-icon/tg-icon.atomic-component';
 import TwitterIconAtomicComponent from '../../atomic-components/twitter-icon/twitter-icon.atomic-component';
 
-const SocialIconsListComponent = ({ iconSize }) => {
+type SocialIconsListComponentProps = {
+  iconSize?: number | string
+}
+
+const SocialIconsListComponent : React.FC<SocialIconsListComponentProps> = ({ iconSize }) : JSX.Element=> {
   return (
     <>
       <TwitterIconAtomicComponent size={iconSize} />
