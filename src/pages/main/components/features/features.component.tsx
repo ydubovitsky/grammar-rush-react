@@ -51,9 +51,7 @@ const FeaturesComponent: React.FC = (): JSX.Element => {
       <Fade>
         <SectionTitleComponent name="Основные особенности нашего подхода к изучению языка" />
         <div className={styles.featuresContainer}>
-          <div className={styles.svgContainer}>
-            <img src={FeatureSvg} alt="Your SVG" />
-          </div>
+          <img src={FeatureSvg} alt="Your SVG" />
           <div className={styles.featuresPoints}>
             {showFeatureEl(featuresData)}
           </div>
