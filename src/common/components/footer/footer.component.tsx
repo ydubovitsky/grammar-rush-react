@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styles from "./footer.module.css";
 
 const FooterComponent = () => {
+
   return (
     <div className={styles.container}>
       <div className={styles.aboutContainer}>
@@ -32,14 +33,6 @@ const FooterComponent = () => {
             </Link>
           </div>
         </div>
-        <div className={styles.contactsContainer}>
-          <p>
-            <i className="fas fa-at"></i> Почта
-          </p>
-          <p>
-            <i className="fab fa-telegram"></i> Telegram
-          </p>
-        </div>
         <div className={styles.about}>
           <h1>О приложении</h1>
           <p>
@@ -55,7 +48,8 @@ const FooterComponent = () => {
       </div>
       <div className={styles.authorContainer}>
         <p>
-          © 2022 - {new Date().getFullYear()} Все права защищены. Создано и разработано Дубовицким Ю.А.
+          © 2022 - {new Date().getFullYear()} Все права защищены. Создано и
+          разработано Дубовицким Ю.А.
         </p>
       </div>
     </div>

@@ -1,15 +1,13 @@
 .container {
-  display: grid;
-  grid-template-rows: 3fr 1fr;
   box-shadow: 2px 2px 2px 2px silver;
 }
 
 .aboutContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   align-items: center;
-  padding: 5%;
+  padding: 2% 5%;
 }
 
 .logoContainer {
@@ -42,9 +40,16 @@
   gap: 20px;
 }
 
-.contactsContainer {
-  display: grid;
+.socialMeadiContainer {
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+}
+
+.socialMeadiContainer__href {
+	text-decoration: none;
+  font-size: 2rem;
+  color: ;
 }
 
 .icons {
