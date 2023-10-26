@@ -1,4 +1,3 @@
-import { Fade } from "react-awesome-reveal";
 import SectionTitleComponent from "../../../../common/atomic-components/section-title/section-title.component";
 import MobileApp3dComponent from "../../../../common/components/mobile-app-3d/mobile-app-3d.component";
 import styles from "./download.module.css";
@@ -8,7 +7,6 @@ const SPLINE_URL = "https://prod.spline.design/DLgBQnJu9JmWhUa5/scene.splinecode
 const DownloadComponent = () => {
   return (
     <div className={styles.container}>
-      <Fade triggerOnce>
         <SectionTitleComponent
           name="Скачать приложение сейчас"
           description="Установите наше приложение и получите незаменимого помощника, который всегда под рукой"
@@ -50,7 +48,6 @@ const DownloadComponent = () => {
             </div>
           </div>
         </div>
-      </Fade>
     </div>
   );
 };
