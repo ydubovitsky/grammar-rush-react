@@ -12,6 +12,7 @@ services:
       PROFILE_ACTIVE: ${PROFILE_ACTIVE:-postgres}
       ADMIN_NAME: ${ADMIN_NAME:-admin}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-password}
+      JWT_SECURITY_KEY: ${JWT_SECURITY_KEY:-2GdQ!HO6X629EdRh&OoE0Y08k3baLji2AH1gSE0Y08k3baLji2AH1gS&ffA#qe2TrE92GdQ!HO6X629EdRh&asd12dbnq291hf23cbKxeqX&ffA#qe2TrE92GdQ!HO6X629EdRh&Oo%#vy&juC9G@kabKxeqX&ffA#qe2TrE92GdQ!HO6X629EdRh&Oo%#vy&juC9G@kabKxeqX&ffA#qe2TrE9}
       POSTGRES_URL: jdbc:postgresql://yeap-english-db:5432/postgres
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
